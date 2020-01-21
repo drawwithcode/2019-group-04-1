@@ -10,6 +10,9 @@ function preload(){
 function setup() {
   canvas = createCanvas(windowWidth,windowHeight);
   canvas.parent('#tela');
+}
+
+function draw() {
 
   imageMode(CENTER);
   image(immaginesfondo, width/1.8, height/2, immaginesfondo.width*1.3, immaginesfondo.height*1.3);
@@ -21,14 +24,9 @@ function setup() {
       ellipse(x, y, 2);
     }
   }
-
-  //image(logo, width/2, height/2, logo.width/10, logo.height/10);
-}
-
-function draw() {
-
+  
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  canvas = resizeCanvas(windowWidth, windowHeight);
 }
