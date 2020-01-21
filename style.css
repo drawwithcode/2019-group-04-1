@@ -12,12 +12,12 @@ body {
   position:absolute;
   z-index: 100;
   align: center;
-  left: 40%;
-  top: 30%;
+  left: 38%;
+  top: 10%;
 }
 
 #loghino img{
-  width: 30%;
+  width: 55%;
   opacity: 0;
 
   animation-name: hello;
@@ -28,12 +28,12 @@ body {
 
 @keyframes hello {
   0% {opacity: 0;}
-  20% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-  35% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-  55% {opacity: 1; width: 40%; margin-left: -4%; margin-top: -4%;}
-  60% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-  70% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-  100% {opacity: 1; width: 30%; margin-left: -40%; margin-top: 0; }
+  20% {opacity: 1; width: 55%; margin-left: 0; margin-top: 0;}
+  35% {opacity: 1; width: 55%; margin-left: 0; margin-top: 0;}
+  55% {opacity: 1; width: 65%; margin-left: -4%; margin-top: -4%;}
+  60% {opacity: 1; width: 55%; margin-left: 0; margin-top: 0;}
+  70% {opacity: 1; width: 55%; margin-left: 0; margin-top: 0;}
+  100% {opacity: 1; width: 55%; margin-left: -40%; margin-top: 0; }
 
 }
 
@@ -54,4 +54,30 @@ body {
 @keyframes coloring {
   0% {opacity: 0;}
   100% {opacity: 0.5;}
+}
+
+.circle img{
+  width: 68%;
+  opacity: 0;
+
+
+  animation-name: fillingcircle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+.circle {
+    z-index: 70;
+    position: absolute;
+    top: 5%;
+    left: 19%;
+}
+
+@keyframes fillingcircle {
+  0% {opacity: 0;}
+
+  100% {opacity: 1;}
 }
