@@ -4,66 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <title> We are louder! </title>
-    <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-
-    #tela {
-      position:absolute;
-      z-index: -100;
-    }
-
-    #loghino {
-      position:absolute;
-      z-index: 100;
-      align: center;
-      left: 40%;
-      top: 30%;
-    }
-
-    #loghino img{
-      width: 30%;
-      opacity: 0;
-
-      animation-name: hello;
-      animation-duration: 4s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-    }
-
-    @keyframes hello {
-      0% {opacity: 0;}
-      20% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-      35% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-      50% {opacity: 1; width: 40%; margin-left: -4%; margin-top: -4%;}
-      55% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-      65% {opacity: 1; width: 30%; margin-left: 0; margin-top: 0;}
-      100% {opacity: 1; width: 30%; margin-left: -40%; margin-top: 0; }
-
-    }
-
-    #menu {
-      width: 100%;
-      height: 100%;
-      position:absolute;
-      z-index: 50;
-      background-color: black;
-      opacity: 0;
-
-      animation-name: coloring;
-      animation-delay: 5s;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes coloring {
-      0% {opacity: 0;}
-      100% {opacity: 0.5;}
-    }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="p5.min.js"></script>
     <script src="p5.sound.min.js"></script>
     <script src="sketch landing page.js"></script>
