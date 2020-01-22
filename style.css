@@ -127,31 +127,59 @@ body {
   }
 }
 
-#menulist ul li,#menulist2 ul li {
+#menulist ul li {
   margin-bottom: 11%;
 }
 
-/* unvisited link */
-#menulist ul li a,#menulist2 ul li a:link {
+#menulist ul li a:link {
   color: rgb(172, 210, 237);
   text-decoration: none;
 }
 
 /* visited link */
-#menulist ul li a,#menulist2 ul li a:visited {
+#menulist ul li a:visited {
   color: rgb(172, 210, 237);
   text-decoration: none;
 }
 
 /* mouse over link */
-#menulist ul li a,#menulist2 ul li a:hover {
+#menulist ul li a:hover {
   color: white;
   text-decoration: none;
   font-size: 29px;
 }
 
 /* selected link */
-#menulist ul li a,#menulist2 ul li a:active {
+#menulist ul li a:active {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+#menulist2 ul li {
+  margin-bottom: 11%;
+}
+
+#menulist2 ul li a:link {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* visited link */
+#menulist2 ul li a:visited {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* mouse over link */
+#menulist2 ul li a:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+/* selected link */
+#menulist2 ul li a:active {
   color: white;
   text-decoration: none;
   font-size: 29px;
