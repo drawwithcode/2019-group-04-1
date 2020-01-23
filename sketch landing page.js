@@ -14,8 +14,8 @@ function setup() {
 
 function draw() {
 
-  imageMode(CENTER);
-  image(immaginesfondo, width/1.8, height/2, immaginesfondo.width*1.3, immaginesfondo.height*1.3);
+  //imageMode(CENTER);
+  //image(immaginesfondo, width/1.8, height/2, immaginesfondo.width*1.3, immaginesfondo.height*1.3);
 
   for(var x = 0; x < windowWidth; x += 10) {
     for(var y = 0; y < windowHeight; y += 10) {
@@ -24,7 +24,7 @@ function draw() {
       ellipse(x, y, 2);
     }
   }
-  
+
 }
 
 function windowResized() {
