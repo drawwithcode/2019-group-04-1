@@ -1,10 +1,9 @@
 var canvas;
 var immaginesfondo;
-var logo;
+
 
 function preload(){
   immaginesfondo = loadImage("mappamundo.jpeg");
-  logo = loadImage("logo.png");
 }
 
 function setup() {
@@ -16,7 +15,7 @@ function draw() {
 
   //imageMode(CENTER);
   //image(immaginesfondo, width/1.8, height/2, immaginesfondo.width*1.3, immaginesfondo.height*1.3);
-
+push();
   for(var x = 0; x < windowWidth; x += 10) {
     for(var y = 0; y < windowHeight; y += 10) {
       noStroke();
@@ -24,7 +23,7 @@ function draw() {
       ellipse(x, y, 2);
     }
   }
-
+  pop();
 }
 
 function windowResized() {
