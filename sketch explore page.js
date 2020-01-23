@@ -5,8 +5,8 @@ var icon;
 var lafontreg;
 var lafontbold;
 var i = 4;
-
-var cerchio = select('.circle2');
+var chile;
+var imagechile;
 
 function preload(){
   immaginesfondo = loadImage("mappamundo.jpeg");
@@ -22,6 +22,11 @@ function setup() {
 
   frameRate(100);
   angleMode(DEGREES);
+
+  chile = select('#menuchile');
+  imagechile = select('#chile')
+  chile.mouseOver(appearChile);
+  chile.mouseOut(disappearChile);
 }
 
 function draw() {
@@ -34,19 +39,18 @@ function draw() {
       ellipse(x, y, 2);
     }
   }
-
   pop();
-
-  push();
-
-  cerchio.style('display','none');
-
-  pop();
-
-
 }
 
 
 function windowResized() {
   canvas = resizeCanvas(windowWidth, windowHeight);
+}
+
+function appearChile() {
+  imagechile.style('display', 'block');
+}
+
+function disappearChile() {
+  imagechile.style('display', 'none');
 }
