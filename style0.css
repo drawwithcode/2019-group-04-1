@@ -1,0 +1,91 @@
+@font-face {
+  font-family: Musket bold;
+  src: url(Musketbold.otf);
+}
+
+@font-face {
+  font-family: Musket regular;
+  src: url(Musketregular.otf);
+}
+
+body {
+
+  padding: 0;
+  margin: 0;
+}
+
+#tela {
+  background-image: url(mappamundo.jpeg);
+  position: absolute;
+  z-index: -100;
+}
+
+#corpocentrale, #corpocentrale2 {
+  position: absolute;
+  z-index: 100;
+  align: center;
+  left: 38%;
+  top: 15%;
+  width: 54%;
+}
+
+#imgloghino {
+  width: 55%;
+  opacity: 0;
+  float: left;
+  margin-top: 1%;
+
+}
+#imgloghino2 {
+  opacity: 1;
+  width: 55%;
+  margin-left: -40%;
+  margin-top: 0;
+
+  animation-name: muovi ;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes muovi {
+  0% {
+    margin-left: -40%;
+  }
+
+  100% {
+    margin-left: -200%;
+  }
+}
+
+.circle img {
+  width: 70%;
+  opacity: 0;
+}
+
+.circle2 img {
+  width: 70%;
+  opacity: 1;
+  animation-name: defilcircle;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+.circle, .circle2 {
+  z-index: 70;
+  position: absolute;
+  top: 13%;
+  left: 22%;
+}
+
+@keyframes defilcircle {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
