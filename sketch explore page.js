@@ -5,8 +5,16 @@ var icon;
 var lafontreg;
 var lafontbold;
 var i = 4;
+
+
 var chile;
 var imagechile;
+var colombia;
+var imagecolombia;
+var hongkong;
+var imagehongkong;
+var lebanon;
+var imagelebanon;
 
 function preload(){
   immaginesfondo = loadImage("mappamundo.jpeg");
@@ -27,6 +35,22 @@ function setup() {
   imagechile = select('#chile')
   chile.mouseOver(appearChile);
   chile.mouseOut(disappearChile);
+
+  colombia = select('#menucolombia');
+  imagecolombia = select('#colombia')
+  colombia.mouseOver(appearColombia);
+  colombia.mouseOut(disappearColombia);
+
+  hongkong = select('#menuhongkong');
+  imagehongkong = select('#hongkong')
+  hongkong.mouseOver(appearHong);
+  hongkong.mouseOut(disappearHong);
+
+  lebanon = select('#menulebanon');
+  imagelebanon = select('#lebanon')
+  lebanon.mouseOver(appearLebanon);
+  lebanon.mouseOut(disappearLebanon);
+
 }
 
 function draw() {
@@ -50,7 +74,30 @@ function windowResized() {
 function appearChile() {
   imagechile.style('display', 'block');
 }
-
 function disappearChile() {
   imagechile.style('display', 'none');
+}
+
+
+function appearColombia() {
+  imagecolombia.style('display', 'block');
+}
+function disappearColombia() {
+  imagecolombia.style('display', 'none');
+}
+
+
+function appearHong() {
+  imagehongkong.style('display', 'block');
+}
+function disappearHong() {
+  imagehongkong.style('display', 'none');
+}
+
+
+function appearLebanon() {
+  imagelebanon.style('display', 'block');
+}
+function disappearLebanon() {
+  imagelebanon.style('display', 'none');
 }
