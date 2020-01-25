@@ -142,7 +142,7 @@ top: -2%;
 #menulist {
   position: absolute;;
   z-index: 220;
-  margin-top: 20%;
+  margin-top: 17%;
   width: 40%;
   height: 30%;
 }
@@ -155,8 +155,8 @@ top: -2%;
   list-style-type:none;
   color: white;
   font-family: Musket regular;
-  font-size: 28px;
-  margin-left: -30%;
+  font-size: 35px;
+  margin-left: -40%;
 
   animation-name: menul;
   animation-delay: 4s;
@@ -166,7 +166,7 @@ top: -2%;
 
 @keyframes menul {
   0% {
-    margin-left: -30%;
+    margin-left: -40%;
   }
 
   100% {
@@ -192,20 +192,59 @@ top: -2%;
 /* mouse over link */
 #menulist ul li a:hover {
   color: white;
-  text-decoration: underline;
-  font-size: 33px;
+  text-decoration: none;
+  font-size: 40px;
 }
 
 #chile {
   position: absolute;
   z-index: 220;
-  float: right;
-  right: 0;
-  width: 55%;
+  left: 37%;
+  width: 62%;
+  display: none;
+}
+#colombia {
+  position: absolute;
+  z-index: 220;
+  left: 37%;
+  width: 62%;
+  display: none;
+}
+#hongkong {
+  position: absolute;
+  z-index: 220;
+  left: 37%;
+  width: 62%;
+  display: none;
+}
+#lebanon {
+  position: absolute;
+  z-index: 220;
+  left: 37%;
+  width: 62%;
   display: none;
 }
 
 .chilean {
-  margin-top: 25%;
-  height: 550px;
+  margin-top: 20%;
+  height: 600px;
+  float: left;
+}
+
+#abstract{
+  float: right;
+  font-family: Musket regular;
+  color: white;
+  margin-top: 26%;
+  width: 43%;
+  margin-right: 9%;
+}
+
+#abstract h1{
+  font-size: 35px;
+}
+
+#abstract p {
+  font-size: 24px;
+  letter-spacing: 1pt;
 }
