@@ -248,3 +248,41 @@ top: -2%;
   font-size: 24px;
   letter-spacing: 1pt;
 }
+
+#textsupport{
+  position: absolute;
+  z-index: 100;
+  right:5%;
+}
+#textback{
+  position: absolute;
+  z-index: 100;
+  right:5%;
+  top:5%;
+}
+
+h1 a{
+  float: right;
+  width: 100%;
+  height: 10%;
+  font-family: Musket bold;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  color:  #ff8676;
+  text-decoration: none;
+}
+
+.button {
+  animation-name: upup;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes upup {
+  0% {font-size: 15px;}
+  50% {font-size: 22px;}
+  100% {font-size: 15px;}
+}
