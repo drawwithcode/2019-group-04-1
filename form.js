@@ -17,11 +17,11 @@ $(document).ready(function(){
     if(country_id != '')
     {
       $.getJSON('states.json', function(data){
-        stateOptions += '<option value="">Select state</option>';
+        stateOptions = '<option value="">Select state</option>';
         $.each(data, function(key, state){
           if(country_id == state.country_id)
           {
-            stateOptions += '<option value="'+state.id+'">'+state.name+'</option>';
+            stateOptions = '<option value="'+state.id+'">'+state.name+'</option>';
           }
         });
         $('#state').html(stateOptions);
@@ -39,11 +39,11 @@ $(document).ready(function(){
     if(state_id != '')
     {
       $.getJSON('cities.json', function(data){
-        cityOptions += '<option value="">Select city</option>';
+        cityOptions = '<option value="">Select city</option>';
         $.each(data, function(key, city){
           if(state_id == city.state_id)
           {
-            cityOptions += '<option value="'+city.id+'">'+city.name+'</option>';
+            cityOptions = '<option value="'+city.id+'">'+city.name+'</option>';
           }
         });
         $('#city').html(cityOptions);
