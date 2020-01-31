@@ -43,12 +43,12 @@ function setup() {
   for (var i = 0; i < allthecountrynames.length; i++) {
     dropdown1.option(allthecountrynames[i]);
   }
-dropdown1.changed(fillDrop2);
+  dropdown1.changed(fillDrop2);
 }
 
 
 function draw() {
-// clear();
+  // clear();
 }
 
 function fillDrop2() {
@@ -87,9 +87,11 @@ function fillDrop3() {
     dropdown3.option(citiesnames[i]);
   }
 
-  // dropdown2.changed(fillDrop3);
+  // dropdown3.changed();
 }
 
+
+// legge l'id del country selezionato
 function readId(_countryName) {
 
   for (var i = 0; i < nations.countries.length; i++) {
@@ -99,6 +101,8 @@ function readId(_countryName) {
   }
 }
 
+
+// legge l'id del state selezionato
 function readstatesId(_statesName) {
 
   for (var i = 0; i < states.states.length; i++) {
