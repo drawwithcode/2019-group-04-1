@@ -19,14 +19,16 @@ function setup() {
 
 //select all elements with class "name" inside the .json file
   for(var i = 0; i < nations.countries.length; i++){
-    allthenames = nations.countries[i].name; // e seleziona solo l'ultimo stato porcoddio
+    allthenames.push(nations.countries[i].name); // e seleziona solo l'ultimo stato porcoddio
   }
-  console.log(allthenames);
+  console.log(nations.countries.length);
 
   dropdown = createSelect();
   dropdown.position(10, 10);
-  dropdown.option(allthenames);
 
+  for(var i = 0; i < allthenames.length; i++){
+  dropdown.option(allthenames[i]); // e seleziona solo l'ultimo stato porcoddio
+  }
 }
 
 function draw() {
