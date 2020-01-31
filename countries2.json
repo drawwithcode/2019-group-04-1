@@ -1,4 +1,5 @@
-[
+{
+  "countries": [
     {
         "id": 1,
         "name": "Afghanistan",
@@ -2223,3 +2224,4 @@
         "currency": "ZWL"
     }
 ]
+}
