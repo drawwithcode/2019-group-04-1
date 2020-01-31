@@ -9,7 +9,9 @@ var dropdown3;
 var allthecountrynames = [];
 var statesnames = [];
 var citiesnames = [];
-var sceltacountry;
+var sceltacountry1;
+var sceltacountry2;
+
 
 function preload() {
   data = loadJSON("world-cities.json");
@@ -41,43 +43,67 @@ function setup() {
   for (var i = 0; i < allthecountrynames.length; i++) {
     dropdown1.option(allthecountrynames[i]);
   }
-
-
-  dropdown1.changed(settaValue);
+dropdown1.changed(fillDrop2);
 }
 
 
 function draw() {
-
+// clear();
 }
 
-function settaValue() {
-  var sceltacountry = dropdown1.value();
-  var idScelta = readId(sceltacountry)
+function fillDrop2() {
+  var sceltacountry1 = dropdown1.value();
+  var idScelta1 = readId(sceltacountry1)
 
   // Riempiamo statesnames
   for (var i = 0; i < states.states.length; i++) {
-   if (states.states[i].country_id == idScelta) {
-  statesnames.push(states.states[i].name);
-   }
+    if (states.states[i].country_id == idScelta1) {
+      statesnames.push(states.states[i].name);
+    }
   }
 
-  // Riempiamo dropdown1 con l'array allthecountrynames
+  // Riempiamo dropdown2 con l'array statesnames
   for (var i = 0; i < statesnames.length; i++) {
     dropdown2.option(statesnames[i]);
   }
 
-  // console.log(statesnames);
-
-
+  dropdown2.changed(fillDrop3);
 }
 
+
+function fillDrop3() {
+  var sceltacountry2 = dropdown2.value();
+  var idScelta2 = readstatesId(sceltacountry2)
+
+  // Riempiamo citiesnames
+  for (var i = 0; i < cities.cities.length; i++) {
+    if (cities.cities[i].state_id == idScelta2) {
+      citiesnames.push(cities.cities[i].name);
+    }
+  }
+
+  // Riempiamo dropdown3 con l'array citiesnames
+  for (var i = 0; i < citiesnames.length; i++) {
+    dropdown3.option(citiesnames[i]);
+  }
+
+  // dropdown2.changed(fillDrop3);
+}
 
 function readId(_countryName) {
 
   for (var i = 0; i < nations.countries.length; i++) {
     if (nations.countries[i].name == _countryName) {
       return (nations.countries[i].id);
+    }
+  }
+}
+
+function readstatesId(_statesName) {
+
+  for (var i = 0; i < states.states.length; i++) {
+    if (states.states[i].name == _statesName) {
+      return (states.states[i].id);
     }
   }
 }
