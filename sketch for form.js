@@ -25,7 +25,7 @@ function setup() {
 
   dropdown = createSelect();
   dropdown.position(10, 10);
-  dropdown.option(thename);
+  dropdown.option(allthenames);
 
 }
 
