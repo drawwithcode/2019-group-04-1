@@ -30,12 +30,13 @@
       <h3>COUNTRY</h3>
       <h3>STATE</h3>
       <h3>CITY</h3>
-      <button class="thabutton">SUPPORT!</button>
+      <button id="submit" class="thabutton">SUPPORT!</button>
     </div>
 
 <script>
 var supportButton = document.getElementById('textsupport');
 var backButton = document.getElementById('textback');
+var submitButton = document.getElementById('submit');
 
 function DisplayBlock () {
   if (form.style.display = 'none') {
@@ -55,6 +56,7 @@ function DisplayNone () {
 
 supportButton.addEventListener('click', DisplayBlock);
 backButton.addEventListener('click', DisplayNone);
+submitButton.addEventListener('click', DisplayNone);
 </script>
 
   </body>
