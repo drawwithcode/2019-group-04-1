@@ -26,7 +26,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(100, 100);
   canvas.parent("#tela");
 
   //select all elements with class "name" inside the .json file
