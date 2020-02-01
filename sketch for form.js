@@ -11,6 +11,10 @@ var statesnames = [];
 var citiesnames = [];
 var sceltacountry1;
 var sceltacountry2;
+var coordinates;
+var arreydeprova = [];
+var latCity;
+var lngCity;
 
 
 function preload() {
@@ -18,6 +22,7 @@ function preload() {
   nations = loadJSON("countries.json");
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
+  coordinates = loadJSON("coordinates.json");
 }
 
 function setup() {
@@ -49,7 +54,7 @@ function setup() {
 
 
 function draw() {
-  // clear();
+
 }
 
 function fillDrop2() {
@@ -112,7 +117,39 @@ function fillDrop3() {
   }
 
   citiesnames = [];
-  // dropdown3.changed();
+  dropdown3.changed(getCoo);
+}
+
+
+function getCoo(){
+  var sceltaCity =  dropdown3.value();
+  latCity = readLat(sceltaCity);
+  lngCity = readLng(sceltaCity);
+
+  console.log(latCity);
+  console.log(lngCity);
+}
+
+
+
+
+
+function readLat(_cooLat){
+
+  for (var i = 0; i < coordinates.coordinates.length; i++) {
+      if (coordinates.coordinates[i].name == _cooLat) {
+        return (coordinates.coordinates[i].lat);
+      }
+    }
+}
+
+function readLng(_cooLng){
+
+  for (var i = 0; i < coordinates.coordinates.length; i++) {
+      if (coordinates.coordinates[i].name == _cooLng) {
+        return (coordinates.coordinates[i].lng);
+      }
+    }
 }
 
 
@@ -136,6 +173,17 @@ function readstatesId(_statesName) {
     }
   }
 }
+
+
+// // legge il name della city
+// function readCoo(_cityName) {
+//
+//   for (var i = 0; i < cities.cities.length; i++) {
+//     if (cities.cities[i].name == _cityName) {
+//       return (cities.cities[i].name);
+//     }
+//   }
+// }
 
 
 
