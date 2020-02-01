@@ -21,7 +21,7 @@ var arreydeprova = [];
 var latCity;
 var lngCity;
 
-
+var supporters = [];
 
 function preload(){
   speak = loadImage("speaker.png");
@@ -76,10 +76,35 @@ function setup() {
 
   }
   dropdown1.changed(fillDrop2);
+
+
+  var mysupporters = new ball(latCity, lngCity, 5000);
+  supporters.push(mysupporters);
 }
 
 function draw() {
+  for(var i = 0; i < supporters.length; i++){
+    var j = supporters[i];
+    j.display();
+  }
+}
 
+function support() {
+  var submit = select('#submit');
+  submit.mouse(ball);
+}
+
+function ball(_x, _y, _size) {
+  this.x = _x;
+  this.y = _y;
+  this.size = _size;
+  this.color = 'yellow';
+
+  this.display = function() {
+    noStroke();
+    fill(this.color);
+	  ellipse(this.x, this.y, this.size);
+  }
 }
 
 function fillDrop2() {
