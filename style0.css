@@ -71,11 +71,12 @@ top: -2%;
 }
 
 #form {
-  background-color: #ff8676;
+  background-color: #0a0a14;
+  opacity: 0.8;
   position: absolute;
   z-index: 2000;
   width: 300px;
-  height: 500px;
+  height: 400px;
   left: 30%;
   top: 10%;
 }
@@ -281,6 +282,14 @@ h1 {
   font-weight: 800;
   color:  #ff8676;
   text-decoration: none;
+}
+
+#form h2 {
+  font-family: Musket bold;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  color:  #ff8676;
 }
 
 .button {
