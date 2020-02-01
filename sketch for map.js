@@ -60,13 +60,13 @@ function setup() {
 
   dropdown1 = createSelect();
   dropdown1.parent('#form');
-  dropdown1.position(10, 35);
+  dropdown1.position(60, 160);
   dropdown2 = createSelect();
   dropdown2.parent('#form');
-  dropdown2.position(10, 65);
+  dropdown2.position(60, 240);
   dropdown3 = createSelect();
   dropdown3.parent('#form');
-  dropdown3.position(10, 95);
+  dropdown3.position(60, 320);
   for (var i = 0; i < nations.countries.length; i++) {
     allthecountrynames.push(nations.countries[i].name);
   }
