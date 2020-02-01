@@ -70,6 +70,13 @@ top: -2%;
   z-index: -100;
 }
 
+#form {
+  position: absolute;
+  z-index: 2000;
+  width: 100px;
+  height: 100px;
+}
+
 #corpocentrale, #corpocentrale2 {
   position: absolute;
   z-index: 100;
@@ -254,14 +261,14 @@ top: -2%;
   z-index: 100;
   right:5%;
 }
+
 #textback{
   position: absolute;
   z-index: 100;
   right:5%;
-  top:5%;
 }
 
-h1 a{
+h1 {
   float: right;
   width: 100%;
   height: 10%;
