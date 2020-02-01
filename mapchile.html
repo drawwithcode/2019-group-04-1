@@ -12,16 +12,45 @@
     <script src="p5.sound.min.js"></script>
     <script src="https://unpkg.com/mappa-mundi/dist/mappa.js" type="text/javascript"></script>
     <script src="sketch for map.js"></script>
+    <!--<script src="sketch for form.js"></script>-->
   </head>
   <body>
     <div id="tela">
     </div>
 
-    <div id="textsupport">
-      <h1><a class="button" href="form.html"> SUPPORT </a></h1>
+    <div id="textsupport" style="display:block;">
+      <h1 class = "button"> SUPPORT </h1>
     </div>
-    <div id="textback">
-      <h1><a href="exploremenu.html"> BACK </a></h1>
+    <div id="textback" style="display:none;">
+      <h1>BACK</h1>
     </div>
+
+    <div id="form" style="display:none;">
+    </div>
+
+<script>
+var supportButton = document.getElementById('textsupport');
+var backButton = document.getElementById('textback');
+
+function DisplayBlock () {
+  if (form.style.display = 'none') {
+    form.style.display = 'block';
+    supportButton.style.display = 'none';
+    backButton.style.display = 'block';
+  }
+}
+
+function DisplayNone () {
+  if (form.style.display = 'block') {
+    form.style.display = 'none';
+    supportButton.style.display = 'block';
+    backButton.style.display = 'none';
+  }
+}
+
+supportButton.addEventListener('click', DisplayBlock);
+backButton.addEventListener('click', DisplayNone);
+</script>
+
   </body>
 </html>
