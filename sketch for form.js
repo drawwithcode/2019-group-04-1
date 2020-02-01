@@ -14,7 +14,7 @@ var sceltacountry2;
 
 
 function preload() {
-  data = loadJSON("world-cities.json");
+  // data = loadJSON("world-cities.json");
   nations = loadJSON("countries.json");
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
@@ -42,6 +42,7 @@ function setup() {
   // Riempiamo dropdown1 con l'array allthecountrynames
   for (var i = 0; i < allthecountrynames.length; i++) {
     dropdown1.option(allthecountrynames[i]);
+
   }
   dropdown1.changed(fillDrop2);
 }
@@ -52,6 +53,21 @@ function draw() {
 }
 
 function fillDrop2() {
+
+// azzero le options del drop
+  dropdown2.id("options2");
+  document.getElementById("options2").innerHTML =
+    null;
+
+
+  // se il terzo drop ha delle options le cancello
+    dropdown3.id("options3");
+  if (dropdown3.option.length > 0) {
+    document.getElementById("options3").innerHTML =
+      null;
+  }
+
+
   var sceltacountry1 = dropdown1.value();
   var idScelta1 = readId(sceltacountry1)
 
@@ -67,11 +83,19 @@ function fillDrop2() {
     dropdown2.option(statesnames[i]);
   }
 
+  statesnames = [];
+
   dropdown2.changed(fillDrop3);
 }
 
 
 function fillDrop3() {
+  // azzero le options del drop
+  dropdown3.id("options3");
+  document.getElementById("options3").innerHTML =
+    null;
+
+
   var sceltacountry2 = dropdown2.value();
   var idScelta2 = readstatesId(sceltacountry2)
 
@@ -87,6 +111,7 @@ function fillDrop3() {
     dropdown3.option(citiesnames[i]);
   }
 
+  citiesnames = [];
   // dropdown3.changed();
 }
 
