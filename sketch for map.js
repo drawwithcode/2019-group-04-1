@@ -57,15 +57,16 @@ function setup() {
   }
   image(speak,20,height-50,30,30);
 
+
   dropdown1 = createSelect();
   dropdown1.parent('#form');
-  dropdown1.position(10, 10);
+  dropdown1.position(10, 35);
   dropdown2 = createSelect();
   dropdown2.parent('#form');
-  dropdown2.position(10, 40);
+  dropdown2.position(10, 65);
   dropdown3 = createSelect();
   dropdown3.parent('#form');
-  dropdown3.position(10, 70);
+  dropdown3.position(10, 95);
   for (var i = 0; i < nations.countries.length; i++) {
     allthecountrynames.push(nations.countries[i].name);
   }
