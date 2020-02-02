@@ -23,6 +23,9 @@ var lngCity;
 
 var supporters = [];
 
+const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
+
+
 function preload(){
   speak = loadImage("speaker.png");
   nations = loadJSON("countries.json");
@@ -31,19 +34,17 @@ function preload(){
   coordinates = loadJSON("coordinates.json");
 }
 
+const options = {
+  lat: 0,
+  lng: 0,
+  zoom: 3,
+  studio: true,
+  style:"mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
+}
+
 function setup() {
   canvas = createCanvas(windowWidth,windowHeight);
   canvas.parent("#tela");
-
-  var mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
-
-  var options = {
-    lat: 0,
-    lng: 0,
-    zoom: 3,
-    studio: true,
-    style:"mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
-  }
 
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
@@ -77,35 +78,64 @@ function setup() {
   }
   dropdown1.changed(fillDrop2);
 
+  // var mysupporters = new ball(latCity, lngCity, 5000);
+  // supporters.push(mysupporters);
 
-  var mysupporters = new ball(latCity, lngCity, 5000);
-  supporters.push(mysupporters);
+
 }
 
 function draw() {
-  for(var i = 0; i < supporters.length; i++){
-    var j = supporters[i];
-    j.display();
-  }
-}
 
-function support() {
   var submit = select('#submit');
-  submit.mouse(ball);
-}
+  submit.mousePressed(support);
+  function support() {
 
-function ball(_x, _y, _size) {
-  this.x = _x;
-  this.y = _y;
-  this.size = _size;
-  this.color = 'yellow';
 
-  this.display = function() {
-    noStroke();
-    fill(this.color);
-	  ellipse(this.x, this.y, this.size);
+    var point = geomap.latLngToPixel(latCity, lngCity);
+
+
+  fill('yellow');
+      ellipse(point.x, point.y, 6);
+
+
+     //  for (let i = 0; i < 1; i++) {
+     //   supporters[i] = new Bubble(point.x, point.y);
+     // }
   }
 }
+
+
+
+class Bubble {
+  constructor(_x, _y) {
+    this.x = _x;
+    this.y = _y;
+    this.r = 2;
+  }
+  move() {
+    this.x = this.x + random(-2, 2);
+    this.y = this.y + random(-2, 2);
+  }
+
+  show() {
+    // stroke(255);
+    // strokeWeight(3.4);
+    fill('#ff8676'); // il secondo valore è l'alpha.
+    ellipse(this.x, this.y, (this.r * 2));
+  }
+}
+// function ball(_x, _y, _size) {
+//   this.x = _x;
+//   this.y = _y;
+//   this.size = _size;
+//   this.color = 'yellow';
+//
+//   this.display = function() {
+//     noStroke();
+//     fill(this.color);
+// 	  ellipse(this.x, this.y, this.size);
+//   }
+// }
 
 function fillDrop2() {
 
