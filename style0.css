@@ -432,7 +432,7 @@ h2 a:hover :active :visited {
   float: left;
 }
 
-#abstract {
+.abstract {
   float: right;
   font-family: Musket regular;
   color: white;
@@ -441,22 +441,22 @@ h2 a:hover :active :visited {
   margin-right: 9%;
 }
 
-#abstract h1 {
+.abstract h1 {
   font-size: 35px;
 }
 
-#abstract p {
+.abstract p {
   font-size: 24px;
   letter-spacing: 1pt;
 }
 
-#textsupport {
+.textsupport {
   position: absolute;
   z-index: 100;
   right: 5%;
 }
 
-#textback {
+.textback {
   position: absolute;
   z-index: 100;
   right: 5%;
@@ -468,9 +468,17 @@ h1 {
   height: 10%;
   font-family: Musket bold;
   font-size: 15px;
-  font-style: normal;
   font-weight: 800;
   color: #ff8676;
+  text-decoration: none;
+}
+
+.titolet{
+  font-family: Musket bold;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.08em;
   text-decoration: none;
 }
 
