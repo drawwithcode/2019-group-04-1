@@ -13,14 +13,107 @@ body {
   margin: 0;
 }
 
+/*              --      ABOUT PAGE STYLE    --               */
+#backabout {
+  background-color: rgb(26, 24, 56);
+}
+
+#titoloabout {
+  font-family: Musket bold;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  color: #ff8676;
+  text-align: center;
+  margin-top: 9%;
+  margin-bottom: 9%;
+}
+
+.parabout {
+  font-family: Musket regular;
+  font-size: 1em;
+  color: #fff;
+  text-align: justify;
+  margin: 0% 21% 4% 21%;
+  line-height: 2em;
+}
+
+#linkend {
+  font-family: Musket regular;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  margin: 5% 0% 5% 0%;
+  display: block;
+}
+
+#linkend:link {
+  color: white;
+}
+
+#linkend:visited {
+  color: white;
+}
+
+#linkend:hover {
+  color: #ff8676;
+  transition-delay: 0s;
+}
+
+#linkend:active {
+  color: #ff8676;
+  transition-delay: 0s;
+}
+
+.footerstring {
+  font-family: Musket regular;
+  font-size: 1em;
+  letter-spacing: 0.06em;
+  text-align: justify;
+  color: #fff;
+  float: left;
+  margin: 0% 4% 0% 4%;
+  transition: 0.5s color;
+}
+
+.footerstring a:link {
+  text-decoration: none;
+  color: #fff;
+  ;
+}
+
+.footerstring a:visited {
+  text-decoration: none;
+  color: #fff;
+  ;
+}
+
+.footerstring a:hover {
+  text-decoration: none;
+  color: #ff8676;
+  transition-delay: 0s;
+}
+
+.footerstring a:active {
+  text-decoration: none;
+  color: #ff8676;
+  t
+}
+
+#red {
+  width: 100%;
+  display: inline-block;
+  margin: 0% 0% 0% 0%;
+  padding: 2% 20% 2% 20%;
+  list-style-type: none;
+}
+
+/*              --      END ABOUT PAGE STYLE    --               */
 #backrosa {
   background-color: #ff8676;
   width: 0%;
   height: 100%;
   position: absolute;
   z-index: 200;
-
-
   animation-name: backentr;
   animation-delay: 2s;
   animation-duration: 1.8s;
@@ -38,29 +131,25 @@ body {
   }
 }
 
-
-#bluexplore{
-
-position: absolute;
-z-index: 210;
-left: -100%;
-top: -2%;
-
-
+#bluexplore {
+  position: absolute;
+  z-index: 210;
+  left: -100%;
+  top: -2%;
   animation-name: bluentr;
   animation-delay: 2.3s;
   animation-duration: 2.3s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
-
 }
+
 @keyframes bluentr {
   0% {
     left: -100%;
   }
 
   100% {
-    left : 0%;
+    left: 0%;
   }
 }
 
@@ -102,16 +191,16 @@ top: -2%;
   text-align: center;
 }
 
-#form select{
+#form select {
   font-family: Musket regular;
   font-size: 15px;
   border-radius: 10px;
   border: #ff8676 1px solid;
   color: white;
   text-decoration: none;
- display: inline-block;
- padding: 15px 32px;
- background-color: rgba(10, 10, 20, 0);
+  display: inline-block;
+  padding: 15px 32px;
+  background-color: rgba(10, 10, 20, 0);
 }
 
 .thabutton {
@@ -125,18 +214,16 @@ top: -2%;
   text-align: center;
   padding: 15px 32px;
   text-decoration: none;
- display: inline-block;
- margin-top: 18%;
- margin-left: 28.7%;
-
+  display: inline-block;
+  margin-top: 18%;
+  margin-left: 28.7%;
 }
+
 .thabutton:hover {}
 
 .thabutton:active {
   transform: translateY(2px);
 }
-
-
 
 #corpocentrale, #corpocentrale2 {
   position: absolute;
@@ -208,7 +295,8 @@ top: -2%;
 }
 
 #menulist {
-  position: absolute;;
+  position: absolute;
+  ;
   z-index: 220;
   margin-top: 17%;
   width: 40%;
@@ -220,12 +308,11 @@ top: -2%;
 }
 
 #menulist ul {
-  list-style-type:none;
+  list-style-type: none;
   color: white;
   font-family: Musket regular;
   font-size: 35px;
   margin-left: -40%;
-
   animation-name: menul;
   animation-delay: 4s;
   animation-duration: 2s;
@@ -271,6 +358,7 @@ top: -2%;
   width: 62%;
   display: none;
 }
+
 #colombia {
   position: absolute;
   z-index: 220;
@@ -278,6 +366,7 @@ top: -2%;
   width: 62%;
   display: none;
 }
+
 #hongkong {
   position: absolute;
   z-index: 220;
@@ -285,6 +374,7 @@ top: -2%;
   width: 62%;
   display: none;
 }
+
 #lebanon {
   position: absolute;
   z-index: 220;
@@ -299,7 +389,7 @@ top: -2%;
   float: left;
 }
 
-#abstract{
+#abstract {
   float: right;
   font-family: Musket regular;
   color: white;
@@ -308,7 +398,7 @@ top: -2%;
   margin-right: 9%;
 }
 
-#abstract h1{
+#abstract h1 {
   font-size: 35px;
 }
 
@@ -317,16 +407,16 @@ top: -2%;
   letter-spacing: 1pt;
 }
 
-#textsupport{
+#textsupport {
   position: absolute;
   z-index: 100;
-  right:5%;
+  right: 5%;
 }
 
-#textback{
+#textback {
   position: absolute;
   z-index: 100;
-  right:5%;
+  right: 5%;
 }
 
 h1 {
@@ -337,11 +427,9 @@ h1 {
   font-size: 15px;
   font-style: normal;
   font-weight: 800;
-  color:  #ff8676;
+  color: #ff8676;
   text-decoration: none;
 }
-
-
 
 .button {
   animation-name: upup;
@@ -352,7 +440,15 @@ h1 {
 }
 
 @keyframes upup {
-  0% {font-size: 15px;}
-  50% {font-size: 22px;}
-  100% {font-size: 15px;}
+  0% {
+    font-size: 15px;
+  }
+
+  50% {
+    font-size: 22px;
+  }
+
+  100% {
+    font-size: 15px;
+  }
 }
