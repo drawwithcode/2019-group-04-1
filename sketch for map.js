@@ -26,7 +26,7 @@ var supporters = [];
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
 
 
-function preload(){
+function preload() {
   speak = loadImage("speaker.png");
   nations = loadJSON("countries.json");
   states = loadJSON("states.json");
@@ -39,24 +39,24 @@ const options = {
   lng: 0,
   zoom: 3,
   studio: true,
-  style:"mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
+  style: "mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth,windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("#tela");
 
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
 
-  for(var x = 0; x < windowWidth; x += 10) {
-    for(var y = 0; y < windowHeight; y += 10) {
+  for (var x = 0; x < windowWidth; x += 10) {
+    for (var y = 0; y < windowHeight; y += 10) {
       noStroke();
       fill(26, 24, 56);
       ellipse(x, y, 2);
     }
   }
-  image(speak,20,height-50,30,30);
+  image(speak, 20, height - 50, 30, 30);
 
 
   dropdown1 = createSelect();
@@ -78,8 +78,6 @@ function setup() {
   }
   dropdown1.changed(fillDrop2);
 
-  // var mysupporters = new ball(latCity, lngCity, 5000);
-  // supporters.push(mysupporters);
 
 
 }
@@ -88,65 +86,55 @@ function draw() {
 
   var submit = select('#submit');
   submit.mousePressed(support);
+
   function support() {
-
-
     var point = geomap.latLngToPixel(latCity, lngCity);
 
 
-  fill('yellow');
-      ellipse(point.x, point.y, 6);
+    fill('yellow');
+    ellipse(point.x, point.y, 6);
 
-
-     //  for (let i = 0; i < 1; i++) {
-     //   supporters[i] = new Bubble(point.x, point.y);
-     // }
+    //  for (let i = 0; i < 1; i++) {
+    //   supporters[i] = new Bubble(point.x, point.y);
+    // }
+    //    for (let i = 0; i < supporters.length; i++) {
+    //
+    //   supporters[i].show();
+    // }
   }
 }
 
 
 
-class Bubble {
-  constructor(_x, _y) {
-    this.x = _x;
-    this.y = _y;
-    this.r = 2;
-  }
-  move() {
-    this.x = this.x + random(-2, 2);
-    this.y = this.y + random(-2, 2);
-  }
 
-  show() {
-    // stroke(255);
-    // strokeWeight(3.4);
-    fill('#ff8676'); // il secondo valore è l'alpha.
-    ellipse(this.x, this.y, (this.r * 2));
-  }
-}
-// function ball(_x, _y, _size) {
-//   this.x = _x;
-//   this.y = _y;
-//   this.size = _size;
-//   this.color = 'yellow';
+// class Bubble {
+//   constructor(_x, _y) {
+//     this.x = _x;
+//     this.y = _y;
+//     this.r = 2;
+//   }
+//   move() {
+//     this.x = this.x + random(-2, 2);
+//     this.y = this.y + random(-2, 2);
+//   }
 //
-//   this.display = function() {
-//     noStroke();
-//     fill(this.color);
-// 	  ellipse(this.x, this.y, this.size);
+//   show() {
+//     fill('#ff8676');
+//     ellipse(this.x, this.y, (this.r * 2));
 //   }
 // }
 
+
 function fillDrop2() {
 
-// azzero le options del drop
+  // azzero le options del drop
   dropdown2.id("options2");
   document.getElementById("options2").innerHTML =
     null;
 
 
   // se il terzo drop ha delle options le cancello
-    dropdown3.id("options3");
+  dropdown3.id("options3");
   if (dropdown3.option.length > 0) {
     document.getElementById("options3").innerHTML =
       null;
@@ -201,8 +189,8 @@ function fillDrop3() {
 }
 
 
-function getCoo(){
-  var sceltaCity =  dropdown3.value();
+function getCoo() {
+  var sceltaCity = dropdown3.value();
   latCity = readLat(sceltaCity);
   lngCity = readLng(sceltaCity);
 
@@ -212,24 +200,22 @@ function getCoo(){
 
 
 
-
-
-function readLat(_cooLat){
+function readLat(_cooLat) {
 
   for (var i = 0; i < coordinates.coordinates.length; i++) {
-      if (coordinates.coordinates[i].name == _cooLat) {
-        return (coordinates.coordinates[i].lat);
-      }
+    if (coordinates.coordinates[i].name == _cooLat) {
+      return (coordinates.coordinates[i].lat);
     }
+  }
 }
 
-function readLng(_cooLng){
+function readLng(_cooLng) {
 
   for (var i = 0; i < coordinates.coordinates.length; i++) {
-      if (coordinates.coordinates[i].name == _cooLng) {
-        return (coordinates.coordinates[i].lng);
-      }
+    if (coordinates.coordinates[i].name == _cooLng) {
+      return (coordinates.coordinates[i].lng);
     }
+  }
 }
 
 
