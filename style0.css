@@ -25,7 +25,12 @@ body {
   color: #ff8676;
   text-align: center;
   margin-top: 9%;
-  margin-bottom: 9%;
+  margin-bottom: 2%;
+}
+
+#goto {
+  margin-top: 0%;
+  text-align: center;
 }
 
 .parabout {
@@ -107,6 +112,44 @@ body {
   list-style-type: none;
 }
 
+#logopoli{
+  width: 50%;
+}
+
+#logopoli img{
+  width: 60%;
+}
+
+#teachers{
+  color: white;
+  font-family: Musket regular;
+  font-size: 0.7em;
+  width: 20%;
+  float: left;
+}
+#developpers{
+  color: white;
+  font-family: Musket regular;
+  font-size: 0.7em;
+  width: 25%;
+  float: right;
+}
+
+h2 a{
+  text-decoration: none;
+  font-family: Musket regular;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  color: #ff8676;
+}
+
+h2 a:hover :active :visited {
+  text-decoration: none;
+  font-family: Musket regular;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  color: #ff8676;
+}
 /*              --      END ABOUT PAGE STYLE    --               */
 #backrosa {
   background-color: #ff8676;
