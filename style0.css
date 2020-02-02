@@ -179,6 +179,7 @@ h2 a:hover :active :visited {
   z-index: 210;
   left: -100%;
   top: -2%;
+  height: 102%;
   animation-name: bluentr;
   animation-delay: 2.3s;
   animation-duration: 2.3s;
