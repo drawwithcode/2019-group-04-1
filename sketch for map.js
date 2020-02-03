@@ -24,7 +24,7 @@ var lngCity;
 var supporters = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
-
+var point;
 
 function preload() {
   speak = loadImage("speaker.png");
@@ -78,21 +78,17 @@ function setup() {
   }
   dropdown1.changed(fillDrop2);
 
-
-
 }
 
 function draw() {
 
   var submit = select('#submit');
-  submit.mousePressed(support);
+  submit.mousePressed(this.run);
 
-  function support() {
-    var point = geomap.latLngToPixel(latCity, lngCity);
-
-
-    fill('yellow');
-    ellipse(point.x, point.y, 6);
+//  function support() {
+//    point = geomap.latLngToPixel(latCity, lngCity);
+  //  fill('yellow');
+    //ellipse(point.x, point.y, 6);
 
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
@@ -101,11 +97,28 @@ function draw() {
     //
     //   supporters[i].show();
     // }
-  }
+
 }
 
+const City = function(lat, lng, _size){
+  this.size = 4;
+  this.lat = latCity;
+  this.lng = lngCity;
+};
 
+City.prototype.run = function(){
+  this.update();
+  this.display();
+};
 
+City.prototype.update = function(){
+  this.position = geomap.latLngToPixel(this.lat, this.lng);
+};
+
+City.prototype.display = function(){
+  fill('yellow');
+  ellipse(this.position.x, this.position.y, this.size);
+};
 
 // class Bubble {
 //   constructor(_x, _y) {
