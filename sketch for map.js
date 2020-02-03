@@ -32,6 +32,7 @@ function preload() {
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
+    //data = loadTable("coordinates.csv", 'csv', 'header');
 }
 
 const options = {
@@ -58,7 +59,6 @@ function setup() {
   }
   image(speak, 20, height - 50, 30, 30);
 
-
   dropdown1 = createSelect();
   dropdown1.parent('#form');
   dropdown1.position(60, 160);
@@ -83,12 +83,12 @@ function setup() {
 function draw() {
 
   var submit = select('#submit');
-  submit.mousePressed(this.run);
+  submit.mousePressed(support);
 
-//  function support() {
-//    point = geomap.latLngToPixel(latCity, lngCity);
-  //  fill('yellow');
-    //ellipse(point.x, point.y, 6);
+  function support() {
+    point = geomap.latLngToPixel(latCity, lngCity);
+    fill('yellow');
+    ellipse(point.x, point.y, 6);
 
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
@@ -99,26 +99,6 @@ function draw() {
     // }
 
 }
-
-const City = function(lat, lng, _size){
-  this.size = 4;
-  this.lat = latCity;
-  this.lng = lngCity;
-};
-
-City.prototype.run = function(){
-  this.update();
-  this.display();
-};
-
-City.prototype.update = function(){
-  this.position = geomap.latLngToPixel(this.lat, this.lng);
-};
-
-City.prototype.display = function(){
-  fill('yellow');
-  ellipse(this.position.x, this.position.y, this.size);
-};
 
 // class Bubble {
 //   constructor(_x, _y) {
