@@ -90,10 +90,13 @@ function draw() {
   ellipse(pos.x, pos.y, 6);
   pop();
 
-
+  push();
   var submit = select('#submit');
   submit.mousePressed(support);
+  pop();
 
+  console.log(pos.x);
+  console.log(pos.y);
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
     // }
@@ -113,7 +116,7 @@ function support() {
   fill('yellow');
   ellipse(pos.x, pos.y, 6);
   console.log(pos.x);
-  console.log(y);
+  console.log(pos.y);
   pop();
 }
 // class Bubble {
