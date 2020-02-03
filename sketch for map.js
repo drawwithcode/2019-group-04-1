@@ -24,7 +24,7 @@ var lngCity;
 var supporters = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
-var point;
+var pos;
 
 function preload() {
   speak = loadImage("speaker.png");
@@ -32,7 +32,7 @@ function preload() {
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
-    //data = loadTable("coordinates.csv", 'csv', 'header');
+  data = loadTable("coordinate.csv", 'csv', 'header');
 }
 
 const options = {
@@ -50,13 +50,13 @@ function setup() {
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
 
-  for (var x = 0; x < windowWidth; x += 10) {
-    for (var y = 0; y < windowHeight; y += 10) {
-      noStroke();
-      fill(26, 24, 56);
-      ellipse(x, y, 2);
-    }
-  }
+//  for (var x = 0; x < windowWidth; x += 10) {
+  //  for (var y = 0; y < windowHeight; y += 10) {
+    //  noStroke();
+      //fill(26, 24, 56);
+      //ellipse(x, y, 2);
+    //}
+  //}
   image(speak, 20, height - 50, 30, 30);
 
   dropdown1 = createSelect();
@@ -82,13 +82,17 @@ function setup() {
 
 function draw() {
 
+  push();
+  clear();
+  pos = geomap.latLngToPixel(25.0657,55.17128);
+  noStroke();
+  fill('yellow');
+  ellipse(pos.x, pos.y, 6);
+  pop();
+
+
   var submit = select('#submit');
   submit.mousePressed(support);
-
-  function support() {
-    point = geomap.latLngToPixel(latCity, lngCity);
-    fill('yellow');
-    ellipse(point.x, point.y, 6);
 
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
@@ -100,6 +104,18 @@ function draw() {
 
 }
 
+
+
+function support() {
+  push();
+  pos = geomap.latLngToPixel(latCity, lngCity);
+  noStroke();
+  fill('yellow');
+  ellipse(pos.x, pos.y, 6);
+  console.log(pos.x);
+  console.log(y);
+  pop();
+}
 // class Bubble {
 //   constructor(_x, _y) {
 //     this.x = _x;

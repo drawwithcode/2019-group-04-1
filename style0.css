@@ -473,7 +473,7 @@ h2 a:hover :active :visited {
 .textsupport {
   position: absolute;
   z-index: 100;
-  right: 5%;
+  margin-right: 5%;
 }
 
 .textback {
