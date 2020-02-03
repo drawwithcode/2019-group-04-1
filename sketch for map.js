@@ -21,6 +21,9 @@ var arreydeprova = [];
 var latCity;
 var lngCity;
 
+var supporters = [];
+var totalsupporters = [];
+
 var supporterslat = [];
 var supporterslng = [];
 
@@ -79,24 +82,27 @@ function setup() {
   }
   dropdown1.changed(fillDrop2);
 
+for(var i = 0; i < totalsupporters.lenght; i++){
+    myCity = new City(latCity, lngCity, 6);
+    supporters.push(myCity);
+  }
 }
 
 function draw() {
   push();
         var submit = select('#submit');
-        submit.mousePressed(support);
+        submit.mousePressed();
   pop();
 
-  function support(){
-        push();
-        pos = geomap.latLngToPixel(latCity, lngCity);
-        noStroke();
-        fill('yellow');
-        ellipse(pos.x, pos.y, 6);
-          console.log(pos.x);
-          console.log(pos.y);
-        pop();
+
+  function mousePressed() {
+    for(var i = 0; i < supporters.length; i++ ){
+      var c = supporters[i];
+      clear();
+      c.display();
+    }
   }
+
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
     // }
@@ -108,6 +114,20 @@ function draw() {
 }
 
 
+function City(lato, longo, size){
+  this.x = lato;
+  this.y = longo;
+  this.size = size;
+
+  this.draw = function(){
+      push();
+      //pos = geomap.latLngToPixel(latCity, lngCity);
+      noStroke();
+      fill('yellow');
+      ellipse(this.x, this.y, this.size);
+      pop();
+    }
+}
 // class Bubble {
 //   constructor(_x, _y) {
 //     this.x = _x;
