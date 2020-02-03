@@ -21,7 +21,8 @@ var arreydeprova = [];
 var latCity;
 var lngCity;
 
-var supporters = [];
+var supporterslat = [];
+var supporterslng = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
 var pos;
@@ -81,22 +82,21 @@ function setup() {
 }
 
 function draw() {
-
   push();
-  clear();
-  pos = geomap.latLngToPixel(25.0657,55.17128);
-  noStroke();
-  fill('yellow');
-  ellipse(pos.x, pos.y, 6);
+        var submit = select('#submit');
+        submit.mousePressed(support);
   pop();
 
-  push();
-  var submit = select('#submit');
-  submit.mousePressed(support);
-  pop();
-
-  console.log(pos.x);
-  console.log(pos.y);
+  function support(){
+        push();
+        pos = geomap.latLngToPixel(latCity, lngCity);
+        noStroke();
+        fill('yellow');
+        ellipse(pos.x, pos.y, 6);
+          console.log(pos.x);
+          console.log(pos.y);
+        pop();
+  }
     //  for (let i = 0; i < 1; i++) {
     //   supporters[i] = new Bubble(point.x, point.y);
     // }
@@ -108,17 +108,6 @@ function draw() {
 }
 
 
-
-function support() {
-  push();
-  pos = geomap.latLngToPixel(latCity, lngCity);
-  noStroke();
-  fill('yellow');
-  ellipse(pos.x, pos.y, 6);
-  console.log(pos.x);
-  console.log(pos.y);
-  pop();
-}
 // class Bubble {
 //   constructor(_x, _y) {
 //     this.x = _x;
@@ -217,6 +206,7 @@ function readLat(_cooLat) {
   for (var i = 0; i < coordinates.coordinates.length; i++) {
     if (coordinates.coordinates[i].name == _cooLat) {
       return (coordinates.coordinates[i].lat);
+      supporterslat.push(coordinates.coordinates[i].lat);
     }
   }
 }
@@ -226,6 +216,7 @@ function readLng(_cooLng) {
   for (var i = 0; i < coordinates.coordinates.length; i++) {
     if (coordinates.coordinates[i].name == _cooLng) {
       return (coordinates.coordinates[i].lng);
+      supporterslng.push(coordinates.coordinates[i].lng);
     }
   }
 }
