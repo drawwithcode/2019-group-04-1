@@ -532,3 +532,11 @@ h1 {
   margin: 2% 21% 0% 21%;
   line-height: 2em;
 }
+
+.imgs {width: 100%}
+
+a {color:#ff8676; text-decoration:none}
+
+a:hover {color:white}
+
+a:visited {color:#ff8676}
