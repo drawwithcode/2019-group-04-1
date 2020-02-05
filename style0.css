@@ -546,3 +546,14 @@ a:visited {color:#ff8676}
 abbr {
   text-decoration: none;
 }
+
+#speaker {
+  position: fixed;
+  z-index: 3000;
+  bottom: 5%;
+  left: 3%;
+}
+
+#speaker img{
+  width: 8%;
+}

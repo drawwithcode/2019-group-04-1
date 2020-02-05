@@ -28,7 +28,6 @@ const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW
 
 
 function preload() {
-  speak = loadImage("speaker.png");
   nations = loadJSON("countries.json");
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
@@ -58,7 +57,6 @@ function setup() {
       ellipse(x, y, 2);
     }
   }
-  image(speak, 20, height - 50, 30, 30);
 
 
   dropdown1 = createSelect();
