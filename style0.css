@@ -541,3 +541,8 @@ a:hover {color:white}
 a:visited {color:#ff8676}
 
 .videos {width:100%}
+
+
+abbr {
+  text-decoration: none;
+}
