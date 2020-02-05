@@ -23,14 +23,15 @@
     <div id="textsupport" style="display:block; margin-right: 1%;">
       <h1 class = "button"> SUPPORT </h1>
     </div>
-    <div id="textback" style="display:none; margin-right: 1%;">
-      <h1>BACK</h1>
+    <div id="textback">
+      <h1> <a href="chileexplanation.html">WHY?</a></h1>
     </div>
     <div id="speaker">
       <img src="speaker.png">
   </div>
 
     <div id="form" style="display:none;">
+      <h1 id="x" style="display:none; margin-right: 1%;"> X </h1>
       <h2>Where are you from?</h2>
       <h3>COUNTRY</h3>
       <h3>STATE</h3>
@@ -40,14 +41,14 @@
 
 <script>
 var supportButton = document.getElementById('textsupport');
-var backButton = document.getElementById('textback');
+var backButton = document.getElementById('x');
 var submitButton = document.getElementById('submit');
 
 function DisplayBlock () {
   if (form.style.display = 'none') {
     form.style.display = 'block';
     supportButton.style.display = 'none';
-    backButton.style.display = 'block';
+    x.style.display = 'block';
   }
 }
 
