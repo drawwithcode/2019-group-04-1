@@ -483,7 +483,6 @@ h2 a:hover :active :visited {
 }
 
 h1 {
-  float: right;
   height: 10%;
   font-family: Musket bold;
   font-size: 15px;
@@ -502,6 +501,7 @@ h1 {
 }
 
 .button {
+  float: right;
   animation-name: upup;
   animation-duration: 2s;
   animation-fill-mode: both;
