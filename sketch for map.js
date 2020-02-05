@@ -1,6 +1,7 @@
 var canvas;
 var geomap;
 var speak;
+var point;
 
 
 var dropdown1;
@@ -18,17 +19,13 @@ var sceltacountry1;
 var sceltacountry2;
 var coordinates;
 var arreydeprova = [];
-var latCity;
-var lngCity;
+var latCity = 50;
+var lngCity = 30;
 
 var supporters = [];
-var totalsupporters = [];
-
-var supporterslat = [];
-var supporterslng = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
-var pos;
+
 
 function preload() {
   speak = loadImage("speaker.png");
@@ -36,7 +33,6 @@ function preload() {
   states = loadJSON("states.json");
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
-  data = loadTable("coordinate.csv", 'csv', 'header');
 }
 
 const options = {
@@ -54,14 +50,16 @@ function setup() {
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
 
-//  for (var x = 0; x < windowWidth; x += 10) {
-  //  for (var y = 0; y < windowHeight; y += 10) {
-    //  noStroke();
-      //fill(26, 24, 56);
-      //ellipse(x, y, 2);
-    //}
-  //}
+
+  for (var x = 0; x < windowWidth; x += 10) {
+    for (var y = 0; y < windowHeight; y += 10) {
+      noStroke();
+      fill(26, 24, 56);
+      ellipse(x, y, 2);
+    }
+  }
   image(speak, 20, height - 50, 30, 30);
+
 
   dropdown1 = createSelect();
   dropdown1.parent('#form');
@@ -82,68 +80,11 @@ function setup() {
   }
   dropdown1.changed(fillDrop2);
 
-for(var i = 0; i < totalsupporters.lenght; i++){
-    myCity = new City(latCity, lngCity, 6);
-    supporters.push(myCity);
-  }
-}
 
-function draw() {
-  push();
-        var submit = select('#submit');
-        submit.mousePressed();
-  pop();
-
-
-  function mousePressed() {
-    for(var i = 0; i < supporters.length; i++ ){
-      var c = supporters[i];
-      clear();
-      c.display();
-    }
-  }
-
-    //  for (let i = 0; i < 1; i++) {
-    //   supporters[i] = new Bubble(point.x, point.y);
-    // }
-    //    for (let i = 0; i < supporters.length; i++) {
-    //
-    //   supporters[i].show();
-    // }
 
 }
 
 
-function City(lato, longo, size){
-  this.x = lato;
-  this.y = longo;
-  this.size = size;
-
-  this.draw = function(){
-      push();
-      //pos = geomap.latLngToPixel(latCity, lngCity);
-      noStroke();
-      fill('yellow');
-      ellipse(this.x, this.y, this.size);
-      pop();
-    }
-}
-// class Bubble {
-//   constructor(_x, _y) {
-//     this.x = _x;
-//     this.y = _y;
-//     this.r = 2;
-//   }
-//   move() {
-//     this.x = this.x + random(-2, 2);
-//     this.y = this.y + random(-2, 2);
-//   }
-//
-//   show() {
-//     fill('#ff8676');
-//     ellipse(this.x, this.y, (this.r * 2));
-//   }
-// }
 
 
 function fillDrop2() {
@@ -226,7 +167,6 @@ function readLat(_cooLat) {
   for (var i = 0; i < coordinates.coordinates.length; i++) {
     if (coordinates.coordinates[i].name == _cooLat) {
       return (coordinates.coordinates[i].lat);
-      supporterslat.push(coordinates.coordinates[i].lat);
     }
   }
 }
@@ -236,7 +176,6 @@ function readLng(_cooLng) {
   for (var i = 0; i < coordinates.coordinates.length; i++) {
     if (coordinates.coordinates[i].name == _cooLng) {
       return (coordinates.coordinates[i].lng);
-      supporterslng.push(coordinates.coordinates[i].lng);
     }
   }
 }
@@ -265,4 +204,30 @@ function readstatesId(_statesName) {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  clear();
+  var submit = select('#submit');
+  submit.mousePressed(support);
+  point = geomap.latLngToPixel(latCity, lngCity);
+  // fill('yellow');
+  // ellipse(point.x, point.y, 6);
+  for (let i = 0; i < supporters.length; i++) {
+    fill('#ff8676');
+    ellipse(point.x, point.y, 4);
+  }
+
+  console.log(point.x);
+  console.log(point.y);
+  console.log(supporters.length);
+  console.log(supporters);
+
+}
+
+function support() {
+  for (var i = 0; i < 1; i++) {
+    supporters.push("a_supporter");
+  }
+
 }
