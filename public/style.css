@@ -1,0 +1,253 @@
+@font-face {
+  font-family: Musket bold;
+  src: url(Musketbold.otf);
+}
+
+@font-face {
+  font-family: Musket regular;
+  src: url(Musketregular.otf);
+}
+
+body {
+
+  padding: 0;
+  margin: 0;
+}
+
+#tela {
+  background-image: url(mappamundo.jpeg);
+  position: absolute;
+  z-index: -100;
+}
+
+#corpocentrale, #corpocentrale2 {
+  position: absolute;
+  z-index: 100;
+  align: center;
+  left: 38%;
+  top: 15%;
+  width: 54%;
+}
+
+#imgloghino {
+  width: 55%;
+  opacity: 0;
+  float: left;
+  margin-top: 1%;
+
+  animation-name: hello;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+#imgloghino2 {
+  opacity: 1;
+  width: 55%;
+  margin-left: -40%;
+  margin-top: 0;
+}
+
+@keyframes hello {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+    width: 55%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  55% {
+    opacity: 1;
+    width: 65%;
+    margin-left: -4%;
+    margin-top: -4%;
+  }
+
+  60% {
+    opacity: 1;
+    width: 55%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  70% {
+    opacity: 1;
+    width: 55%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    width: 55%;
+    margin-left: -40%;
+    margin-top: 0;
+  }
+}
+
+
+
+#menulist,#menulist2 {
+  float: right;
+  margin-right: 35%;
+  margin-top: 20%;
+  width: 37%;
+}
+
+
+#menulist2 ul {
+  list-style-type: none;
+  color: white;
+  font-family: Musket regular;
+  font-size: 28px;
+  opacity: 1;
+
+}
+#menulist ul {
+  list-style-type: none;
+  color: white;
+  font-family: Musket regular;
+  font-size: 28px;
+  opacity: 0;
+
+  animation-name: menulist;
+  animation-delay: 7s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes menulist {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#menulist ul li {
+  margin-bottom: 11%;
+}
+
+#menulist ul li a:link {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* visited link */
+#menulist ul li a:visited {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* mouse over link */
+#menulist ul li a:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+/* selected link */
+#menulist ul li a:active {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+#menulist2 ul li {
+  margin-bottom: 11%;
+}
+
+#menulist2 ul li a:link {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* visited link */
+#menulist2 ul li a:visited {
+  color: rgb(172, 210, 237);
+  text-decoration: none;
+}
+
+/* mouse over link */
+#menulist2 ul li a:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+/* selected link */
+#menulist2 ul li a:active {
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+
+
+#menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+  background-color: black;
+  opacity: 0;
+  animation-name: coloring;
+  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+#menubackfisso{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+  background-color: black;
+  opacity: 0.5;
+}
+
+@keyframes coloring {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.circle img {
+  width: 70%;
+  opacity: 0;
+  animation-name: fillingcircle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+.circle2 img {
+  width: 70%;
+  opacity: 1;
+}
+.circle, .circle2 {
+  z-index: 70;
+  position: absolute;
+  top: 13%;
+  left: 22%;
+}
+
+@keyframes fillingcircle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
