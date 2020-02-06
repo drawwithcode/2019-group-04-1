@@ -1,6 +1,6 @@
 var fs = require('fs');
-var data = fs.readFileSync('dots.json');
-var dots = JSON.parse(data);
+var file = fs.readFileSync('dots.json');
+var dots = JSON.parse(file);
 
 console.log(dots);
 
