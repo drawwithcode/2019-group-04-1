@@ -260,7 +260,7 @@ function draw() {
   fill(201, 27, 43, 3);
   for (var i = 0; i < spectrum.length; i++) {
     let d = map(spectrum[i], 0, 0.3, 0.3, 0);
-    ellipse(santiago.x, santiago.y, d);
+    //ellipse(santiago.x, santiago.y, d);
     //ellipse(bogota.x, bogota.y, d);
     //ellipse(beirut.x, beirut.y, d);
     ellipse(hongkong.x, hongkong.y, d);
