@@ -286,7 +286,5 @@ function support() {
   }
 }
 ```
-## Sound design
-
 
 ## Information Storage
