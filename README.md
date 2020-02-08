@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=2k4obVDMTBY
 
 ## Context of use
 
-
+The platform is meant to be used mainly from personale computers, in order to have the best experience possible. It is to be used everytime there's an important manifestation that can involve people abroad or have international implications.
 
 
 
@@ -40,16 +40,16 @@ https://www.youtube.com/watch?v=2k4obVDMTBY
 ## Libraries and methods
 
 
-**p5.js**: a library used to create graphic and interactive experiences, based on the principles of Processing. <br>
+- **p5.js**: a library used to create graphic and interactive experiences, based on the principles of Processing. <br>
 
-**p5.dom.js**: a core library that is part of the p5.js distribution.<br>
-**p5.min.js**: the minified version of p5. It is compressed for faster page loading.<br>
-**p5.sound.min.js**: a core library that is part of the p5.js distribution.<br>
-**p5.geolocalization.js**: a community library of p5.js created by Ben Moren. It provides techniques for acquiring, watching, calculating and geofencing user locations.<br>
-**p5.tiledmap.js**: it provides drawing and helper functions to include maps in sketches.<br>
+- **p5.dom.js**: a core library that is part of the p5.js distribution.<br>
+- **p5.min.js**: the minified version of p5. It is compressed for faster page loading.<br>
+- **p5.sound.min.js**: a core library that is part of the p5.js distribution.<br>
+- **p5.geolocalization.js**: a community library of p5.js created by Ben Moren. It provides techniques for acquiring, watching, calculating and geofencing user locations.<br>
+- **p5.tiledmap.js**: it provides drawing and helper functions to include maps in sketches.<br>
 
-**mapbox.com**: a location data platform for mobile and web applications. <br>
-**Nodes.js**: an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.<br>
+- **mapbox.com**: a location data platform for mobile and web applications. <br>
+- **Nodes.js**: an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.<br>
 
 
 ## Usage
