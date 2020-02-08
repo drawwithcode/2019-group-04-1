@@ -1,6 +1,6 @@
 # WE ARE LOUDER
 
-![Banner](./public/Files/banner.png)<br>
+![Banner](./public/Files/Readme/banner.png)<br>
 
 ## Our team
 
@@ -34,7 +34,7 @@ The platform is meant to be used mainly from personale computers, in order to ha
 
 ## Web architecture 
 
-![Web Arhchitecture](./public/Files/webarch.jpeg)<br>
+![Web Arhchitecture](./public/Files/Readme/webarch.jpeg)<br>
 
 
 ## Libraries and methods
@@ -54,14 +54,14 @@ The platform is meant to be used mainly from personale computers, in order to ha
 
 ## Usage
 
-![Usage](./public/Files/menu.gif)<br>
+![Usage](./public/Files/Readme/menu.gif)<br>
 
 
-## Technology challenges
+## Map technology
 
 ### Form Creation
 
-![Form](./public/Files/form.png)<br>
+![Form](./public/Files/Readme/form.png)<br>
 
 The form is created inside a differend div element that is over the map and made invisible. It is activated by pushing the "support" button on the map, that activates the javascript function: 
 ```javascript
@@ -219,7 +219,7 @@ function fillDrop3() {
   // console.log(supporters);
 ```
 
-![Form](./public/Files/form.gif)<br>
+![Form](./public/Files/Readme/form.gif)<br>
 
 ### Creating the point
 
@@ -287,4 +287,6 @@ function support() {
 }
 ```
 
-## Information Storage
+## Sound
+
+![Sound](./public/Files/Readme/sound.jpeg)<br>
