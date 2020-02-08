@@ -43,7 +43,7 @@ const options = {
   style: "mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
 }
 
-var socket;
+//var socket;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -51,10 +51,10 @@ function setup() {
 
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
-  socket = io();
+  //socket = io();
 // Define which function should be called when a new message
 // comes from the server with type "mouseBroadcast"
-socket.on('mouseBroadcast', newDrawing);
+//socket.on('mouseBroadcast', newDrawing);
 
 //dots
   for (var x = 0; x < windowWidth; x += 10) {
