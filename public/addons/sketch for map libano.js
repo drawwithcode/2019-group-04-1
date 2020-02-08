@@ -92,8 +92,7 @@ function setup() {
     fft = new p5.FFT();
     fft.setInput(pot);
     pot.amp(0.1);
-    pot.play();
-    pot.playMode('sustain');
+    pot.pause();
 
 }
 
