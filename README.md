@@ -52,12 +52,11 @@ The platform is meant to be used mainly from personale computers, in order to ha
 - **Nodes.js**: an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.<br>
 
 
-## Usage
-
-![Usage](./public/Files/Readme/menu.gif)<br>
 
 
 ## Map technology
+
+![Usage](./public/Files/Readme/menu.gif)<br>
 
 ### Form Creation
 
