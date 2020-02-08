@@ -24,7 +24,7 @@ Our website won’t ever replace a protest, but it’s a symbolic activism that 
 
 One of our main sources of inspiration, has been the “cacerolazo”, an spanish word that comes from “cacerola” that in english means pot. The cacerolazo consist in a group of people that gather together in order to make noise by hitting pots and pans and other kitchen utensils in order to call for attention. Here, the sound of pots turns out to be more than a noise, but a powerful symbol that allows many people, regardless of the age, their occupation, and encourage them to be part of the movement in a safe and pacific way. 
 
-https://www.youtube.com/watch?v=2k4obVDMTBY
+[Colombia: cacerolazos contra Iván Duque inundan la noche en Bogotá](https://www.youtube.com/watch?v=2k4obVDMTBY)
 
 ## Context of use
 
@@ -286,3 +286,7 @@ function support() {
   }
 }
 ```
+## Sound design
+
+
+## Information Storage
