@@ -255,8 +255,8 @@ function draw() {
   if(pot.isPlaying() == true ){
   //santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
   //bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
-  beirut = geomap.latLngToPixel(22.3526632,113.9876144);
-  //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
+  //hongkong = geomap.latLngToPixel(22.3526632,113.9876144);
+  beirut = geomap.latLngToPixel(33.8892133,35.4692628);
   noStroke();
   fill(201, 27, 43, 3);
   for (var i = 0; i < spectrum.length; i++) {
