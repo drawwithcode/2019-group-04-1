@@ -290,3 +290,38 @@ function support() {
 ## Sound
 
 ![Sound](./public/Files/Readme/sound.jpeg)<br>
+
+At the moment the submit button is pushed and the location is added, here it is a "surprise": A new draw is made and the sound is played, starting to make the noise of the protest as it is there on the place, where your support is needed.
+
+```javascript
+function draw() {
+  clear();
+  push();
+  var submit = select('#submit');
+  submit.mousePressed(support);
+  point = geomap.latLngToPixel(latCity, lngCity);
+  for (let i = 0; i < supporters.length; i++) {
+    fill('#ff8676');
+    ellipse(point.x, point.y, 4);
+    if (pot.isPlaying() == false) {
+      pot.play();
+    } else {
+      pot.pause();
+    }
+  }
+  pop();
+
+  let spectrum = fft.analyze();
+  push();
+  if(pot.isPlaying() == true ){
+  bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
+  noStroke();
+  fill(201, 27, 43, 3);
+  for (var i = 0; i < spectrum.length; i++) {
+    let d = map(spectrum[i], 0, 0.3, 0.3, 0);
+    ellipse(bogota.x, bogota.y, d);
+    }
+  }
+  pop();
+}
+```
