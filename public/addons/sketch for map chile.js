@@ -33,7 +33,7 @@ var testy;
 
 var supporters = [];
 
-var socket;
+// var socket;
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
 
@@ -64,7 +64,7 @@ function setup() {
 
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
-  socket = io();
+  // socket = io();
 // Define which function should be called when a new message
 // comes from the server with type "mouseBroadcast"
 //socket.on('mouseBroadcast', newDrawing);
