@@ -24,6 +24,13 @@ var arreydeprova = [];
 var latCity = 50;
 var lngCity = 30;
 
+var test;
+var cityxtest = [];
+var cityytest = [];
+
+var testx;
+var testy;
+
 var supporters = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
@@ -36,6 +43,7 @@ function preload() {
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
   pot = loadSound("Files/Audio/Sound.mp3");
+  test = loadJSON("/activecities.json");
 }
 
 const options = {
@@ -94,19 +102,31 @@ function setup() {
     pot.amp(0.1);
     pot.pause();
 
+
+    for(var i = 0; i < test.coordinates.length; i++){
+      testx = test.coordinates[i].latitude;
+
+
+        cityxtest.push(testx);
+    }
+    for(var i = 0; i < test.coordinates.length; i++){
+      testy = test.coordinates[i].longitude;
+
+        cityytest.push(testy);
+    }
 }
 
 // Callback function called when a new message comes from the server
 // Data parameters will contain the received data
-function newDrawing(data){
-	console.log('received:', data)
-  newpoint = geomap.latLngToPixel(data.x, data.y);
-  console.log(newpoint.x);
-  console.log(newpoint.y);
-	noStroke();
-	fill('yellow');
-	ellipse(newpoint.x, newpoint.y, 5);
-}
+//function newDrawing(data){
+	//console.log('received:', data)
+  //newpoint = geomap.latLngToPixel(data.x, data.y);
+  //console.log(newpoint.x);
+  //console.log(newpoint.y);
+	//noStroke();
+	//fill('yellow');
+	//ellipse(newpoint.x, newpoint.y, 5);
+//}
 
 
 
@@ -128,7 +148,7 @@ function fillDrop2() {
 
 
   var sceltacountry1 = dropdown1.value();
-  var idScelta1 = readId(sceltacountry1)
+  var idScelta1 = readId(sceltacountry1);
 
   // Riempiamo statesnames
   for (var i = 0; i < states.states.length; i++) {
@@ -224,23 +244,55 @@ function readstatesId(_statesName) {
       return (states.states[i].id);
     }
   }
+
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+
+// function testCity(_tx, _ty,){
+//   this.x = _tx;
+//   this.y = _ty;
+//
+//   this.display = function(){
+//     clear();
+//     push();
+//     fill('#ff8676');
+//     ellipse(this.x, this.y, 4);
+//     pop();
+//   }
+// }
+
+
+
 function draw() {
   clear();
   push();
+
+for (var i = 0; i < cityxtest.length; i++) {
+
+
+
+    pointini = geomap.latLngToPixel(cityxtest[i], cityytest[i]);
+    push();
+    fill('#ff8676');
+    ellipse(pointini.x, pointini.y, 4);
+    pop();
+
+}
+
+
+
   var submit = select('#submit');
   submit.mousePressed(support);
   point = geomap.latLngToPixel(latCity, lngCity);
   // fill('yellow');
   // ellipse(point.x, point.y, 6);
   for (let i = 0; i < supporters.length; i++) {
-    fill('#ff8676');
-    ellipse(point.x, point.y, 4);
+    fill('#e3c709');
+    ellipse(point.x, point.y, 8);
     if (pot.isPlaying() == false) {
       pot.play();
     } else {
@@ -249,38 +301,26 @@ function draw() {
   }
   pop();
 
-  let spectrum = fft.analyze();
+  // let spectrum = fft.analyze();
   push();
-  if(pot.isPlaying() == true ){
-  //santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
+  // if(pot.isPlaying() == true ){
+   // santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
   bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
-  //beirut = geomap.latLngToPixel(22.3526632,113.9876144);
-  //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
-  noStroke();
-  fill(201, 27, 43, 3);
-  for (var i = 0; i < spectrum.length; i++) {
-    let d = map(spectrum[i], 0, 0.3, 0.3, 0);
-    //ellipse(santiago.x, santiago.y, d);
-    ellipse(bogota.x, bogota.y, d);
-    //ellipse(beirut.x, beirut.y, d);
-    //ellipse(hongkong.x, hongkong.y, d);
-    }
-  }
+  // //beirut = geomap.latLngToPixel(22.3526632,113.9876144);
+  // //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
+   noStroke();
+   fill(201, 27, 43, 50);
+  // for (var i = 0; i < spectrum.length; i++) {
+  //   let d = map(spectrum[i], 0, 0.3, 0.3, 0);
+     // ellipse(santiago.x, santiago.y, 80);
+    ellipse(bogota.x, bogota.y, 80);
+  //   //ellipse(beirut.x, beirut.y, d);
+  //   //ellipse(hongkong.x, hongkong.y, d);
+    // }
+    //  console.log(santiago.x);
+    //  console.log(santiago.y);
+ // }
   pop();
-
-  // console.log(supporters.length);
-  // console.log(supporters);
-
-  function newDrawing(data){
-    clear();
-  	console.log('received:', data)
-    newpoint = geomap.latLngToPixel(data.x, data.y);
-    console.log(newpoint.x);
-    console.log(newpoint.y);
-  	noStroke();
-  	fill('yellow');
-  	ellipse(newpoint.x, newpoint.y, 5);
-  }
 
 }
 
@@ -289,20 +329,9 @@ function support() {
     supporters.push("a_supporter");
   }
 
-
-
-  	//console.log('sending: ',latCity, lngCity);
-  	// noStroke();
-  	// fill(255);
-
-  	// create an object containing the mouse position
-  //	var data = {
-  	//	x: latCity,
-  	//	y: lngCity
-  	//}
-  	// send the object to server,
-  	// tag it as "mouse" event
-  	//socket.emit('mouse', data)
-
-  	// ellipse(point.x, point.y, 5)
   }
+  function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+}

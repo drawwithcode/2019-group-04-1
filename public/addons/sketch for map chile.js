@@ -278,8 +278,6 @@ for (var i = 0; i < cityxtest.length; i++) {
     pointini = geomap.latLngToPixel(cityxtest[i], cityytest[i]);
     push();
     fill('#ff8676');
-    console.log(pointini.x);
-    console.log(pointini.y);
     ellipse(pointini.x, pointini.y, 4);
     pop();
 
@@ -304,40 +302,25 @@ for (var i = 0; i < cityxtest.length; i++) {
   pop();
 
   // let spectrum = fft.analyze();
-  // push();
-  if(pot.isPlaying() == true ){
-  // santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
+  push();
+  // if(pot.isPlaying() == true ){
+   santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
   // //bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
   // //beirut = geomap.latLngToPixel(22.3526632,113.9876144);
   // //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
-  // noStroke();
-  // fill(201, 27, 43, 3);
+   noStroke();
+   fill(201, 27, 43, 50);
   // for (var i = 0; i < spectrum.length; i++) {
   //   let d = map(spectrum[i], 0, 0.3, 0.3, 0);
-  //   ellipse(santiago.x, santiago.y, d);
+     ellipse(santiago.x, santiago.y, 80);
   //   //ellipse(bogota.x, bogota.y, d);
   //   //ellipse(beirut.x, beirut.y, d);
   //   //ellipse(hongkong.x, hongkong.y, d);
-    }
-  //     console.log(santiago.x);
-  //     console.log(santiago.y);
-  // }
-  // pop();
-
-  // console.log(supporters.length);
-  // console.log(supporters);
-
-
-  function newDrawing(data){
-    clear();
-  	console.log('received:', data)
-    newpoint = geomap.latLngToPixel(data.x, data.y);
-    console.log(newpoint.x);
-    console.log(newpoint.y);
-  	noStroke();
-  	fill('yellow');
-  	ellipse(newpoint.x, newpoint.y, 5);
-  }
+    // }
+    //  console.log(santiago.x);
+    //  console.log(santiago.y);
+ // }
+  pop();
 
 }
 
@@ -346,22 +329,6 @@ function support() {
     supporters.push("a_supporter");
   }
 
-
-
-  	//console.log('sending: ',latCity, lngCity);
-  	// noStroke();
-  	// fill(255);
-
-  	// create an object containing the mouse position
-  //	var data = {
-  	//	x: latCity,
-  	//	y: lngCity
-  	//}
-  	// send the object to server,
-  	// tag it as "mouse" event
-  	//socket.emit('mouse', data)
-
-  	// ellipse(point.x, point.y, 5)
   }
   function touchStarted() {
   if (getAudioContext().state !== 'running') {
