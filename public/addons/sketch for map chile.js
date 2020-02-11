@@ -363,3 +363,8 @@ function support() {
 
   	// ellipse(point.x, point.y, 5)
   }
+  function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+}
