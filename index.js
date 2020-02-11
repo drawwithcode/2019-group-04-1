@@ -1,17 +1,25 @@
-const http = require('http');
-const port = process.env.PORT || 3000
+// const http = require('http');
+// const port = process.env.PORT || 3000
+//
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/html');
+//   res.end('<h1>Hello World</h1>');
+// });
+//
+// server.listen(port,() => {
+//   console.log(`Server running at port `+port);
+// });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-});
-
-
+//SETTING UP THE SERVER AND THE SOCKET
+var express = require("express");
+var app = express();
+var http = require("http").createServer(app);
+var port = process.env.PORT || 3000;
+var server = app.listen(port);
+var io = require("socket.io")(server);
+//ENABLES THE APP TO ACCESS THE "PUBLIC" FOLDER
+app.use(express.static("public"));
 
 
 const fs = require('fs');
