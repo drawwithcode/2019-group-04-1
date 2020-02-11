@@ -4,6 +4,9 @@ const {
   google
 } = require('googleapis');
 var coordinatesObject;
+
+var port = process.env.PORT || 3000;
+
 class Coordinates {
   constructor(x, y) {
     this.x = x;
