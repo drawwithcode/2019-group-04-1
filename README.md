@@ -50,6 +50,7 @@ The platform is meant to be used mainly from personale computers, in order to ha
 
 - **mapbox.com**: a location data platform for mobile and web applications. <br>
 - **Nodes.js**: an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.<br>
+- **GoogleAPI**.<br>
 
 
 
@@ -324,3 +325,6 @@ function draw() {
   pop();
 }
 ```
+### Running the server
+
+The server was created using Node.js, GoogleAPIs and a Google Excel Spreadsheet. Throught these APIs is it possible to access the Spreadsheet, in which all the data from the lighted-up cities are store, then node is able to read the data and write inside the spreadsheet. At the same time, Node.js writes a file `.json`, that contains all the information stored into the Spreadsheet. Inside the p5.js sketch, this file is called to create all the dots with all the coordinates already stored at the loading of the page.
