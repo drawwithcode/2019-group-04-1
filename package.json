@@ -1,21 +1,17 @@
 {
-  "name": "fileprove",
+  "name": "read-write-sheet",
   "version": "1.0.0",
-  "description": "socket exemple",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [
-    "sockets",
-    "p5.js",
-    "node"
-  ],
-  "author": "group 04",
-  "license": "ISC",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0"
-  }
+    "google-spreadsheet": "^3.0.5",
+    "googleapis": "^39.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

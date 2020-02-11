@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <link rel="icon" href="logo.png">
+    <title> We are louder! </title>
+    <link rel="stylesheet" type="text/css" href="style0.css">
+    <style>
+  </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./addons/p5.min.js"></script>
+    <script src="./addons/leaflet.js"></script>
+    <script src="./addons/p5.sound.min.js"></script>
+    <script src="./addons/p5.geolocation.js"></script>
+    <script src="https://unpkg.com/mappa-mundi/dist/mappa.js" type="text/javascript"></script>
+    <script src="./addons/sketch for map hongkong.js"></script>
+
+  </head>
+  <body>
+    <div id="tela">
+    </div>
+
+    <div id="textsupport" style="display:block; margin-right: 1%;">
+      <button type="button" class = "button"> support! </button>
+    </div>
+    <div id="textback">
+      <h1> <a href="chileexplanation.html">WHY?</a></h1>
+    </div>
+
+
+    <div id="form" style="display:none;">
+      <h1 id="x" style="display:none; margin-right: 1%;"> X </h1>
+      <h2>Where are you from?</h2>
+      <h3>COUNTRY</h3>
+      <h3>STATE</h3>
+      <h3>CITY</h3>
+      <button id="submit" class="thabutton">SUPPORT!</button>
+    </div>
+
+<script>
+var supportButton = document.getElementById('textsupport');
+var backButton = document.getElementById('x');
+var submitButton = document.getElementById('submit');
+
+function DisplayBlock () {
+  if (form.style.display = 'none') {
+    form.style.display = 'block';
+    supportButton.style.display = 'none';
+    x.style.display = 'block';
+  }
+}
+
+function DisplayNone () {
+  if (form.style.display = 'block') {
+    form.style.display = 'none';
+    supportButton.style.display = 'block';
+    backButton.style.display = 'none';
+  }
+}
+
+supportButton.addEventListener('click', DisplayBlock);
+backButton.addEventListener('click', DisplayNone);
+submitButton.addEventListener('click', DisplayNone);
+</script>
+
+  </body>
+</html>
