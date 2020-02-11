@@ -5,7 +5,15 @@ const {
 } = require('googleapis');
 var coordinatesObject;
 
-var port = process.env.PORT || 3000;
+var express = require('express');
+var app = express();
+
+var server = app.listen(process.env.PORT || 3000,listen);
+
+app.use(express.static('public'));
+
+var io = require('socket.io')(server);
+io.socket.on('connection',newConnection);
 
 class Coordinates {
   constructor(x, y) {
