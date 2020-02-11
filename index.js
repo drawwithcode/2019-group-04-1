@@ -102,20 +102,20 @@ function readData(auth) {
       // Print columns A and E, which correspond to indices 0 and 4.
       rows.map((row) => {
         // console.log(`${row[0]}, ${row[1]}`);
-
+        // calling data from the sheets as variables
         var tempx = (`${row[0]}`).replace(/[^\d.-]/g, '');
         var tempy = (`${row[1]}`).replace(/[^\d.-]/g, '');
 
         var x="";
         var y="";
 
+        // grabbing only numbers and points inside that data
         for (var i = 0; i < tempx.length; i++) {
           if (((tempx[i] >= 0) && (tempx[i] <= 9)) || (tempx[i] == '.')) {
             x += tempx[i];
           }
         }
         x=parseFloat(x, 10);
-
 
         for (var i = 0; i < tempy.length; i++) {
           if (((tempy[i] >= '0') && (tempy[i] <= '9')) || (tempx[i] == '.')) {
@@ -125,12 +125,9 @@ function readData(auth) {
 
         y=parseFloat(y, 10);
 
-console.log(x + "; " + y);
+        console.log(x + "; " + y);
 
-        // k={"event_id":"'+x+'","event_name":"'+y+'"};
-        // san.events.push(k);
-
-
+        // writting and structuring json file with data coming from google sheets
         coordinatesObject = {
           "coordinates": [
             {
