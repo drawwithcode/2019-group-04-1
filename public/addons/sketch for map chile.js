@@ -45,7 +45,7 @@ function preload() {
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
   pot = loadSound("Files/Audio/Sound.mp3");
-  test = loadJSON("./activecities.json");
+  test = loadJSON("/activecities.json");
 }
 
 const options = {
