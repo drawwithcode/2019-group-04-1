@@ -24,6 +24,9 @@ var arreydeprova = [];
 var latCity = 50;
 var lngCity = 30;
 
+var test;
+var citytest = [];
+
 var supporters = [];
 
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
@@ -36,6 +39,7 @@ function preload() {
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
   pot = loadSound("Files/Audio/Sound.mp3");
+  test = loadJSON("test.json");
 }
 
 const options = {
@@ -97,15 +101,15 @@ function setup() {
 
 // Callback function called when a new message comes from the server
 // Data parameters will contain the received data
-function newDrawing(data){
-	console.log('received:', data)
-  newpoint = geomap.latLngToPixel(data.x, data.y);
-  console.log(newpoint.x);
-  console.log(newpoint.y);
-	noStroke();
-	fill('yellow');
-	ellipse(newpoint.x, newpoint.y, 5);
-}
+//function newDrawing(data){
+	//console.log('received:', data)
+  //newpoint = geomap.latLngToPixel(data.x, data.y);
+  //console.log(newpoint.x);
+  //console.log(newpoint.y);
+	//noStroke();
+	//fill('yellow');
+	//ellipse(newpoint.x, newpoint.y, 5);
+//}
 
 
 
@@ -127,7 +131,7 @@ function fillDrop2() {
 
 
   var sceltacountry1 = dropdown1.value();
-  var idScelta1 = readId(sceltacountry1)
+  var idScelta1 = readId(sceltacountry1);
 
   // Riempiamo statesnames
   for (var i = 0; i < states.states.length; i++) {
@@ -223,6 +227,16 @@ function readstatesId(_statesName) {
       return (states.states[i].id);
     }
   }
+
+
+  for(var i = 0; i < test.coordinates.length; i++){
+    var testx = test.coordinates[i].latitude;
+    var testy = test.coordinate[i].longitude;
+
+      var myTest = new testCity(testx, testy);
+
+      citytest.push(myTest);
+  }
 }
 
 function windowResized() {
@@ -232,6 +246,9 @@ function windowResized() {
 function draw() {
   clear();
   push();
+  for (var j = 0; j < citytest.length; j++) {
+    citytest[j].display();
+  }
   var submit = select('#submit');
   submit.mousePressed(support);
   point = geomap.latLngToPixel(latCity, lngCity);
@@ -271,6 +288,19 @@ function draw() {
 
   // console.log(supporters.length);
   // console.log(supporters);
+
+  function testCity(_tx, _ty,){
+    this.x = _tx;
+    this.y = _ty;
+
+    this.display = function(){
+      clear();
+      push();
+      fill('#ff8676');
+      ellipse(this.x, this.y, 4);
+      pop();
+    }
+  }
 
   function newDrawing(data){
     clear();
