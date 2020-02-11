@@ -1,8 +1,8 @@
 {
     "coordinates": [
         {
-            "latitude": 1234.567,
-            "longitude": 33.3
+            "latitude": "1234.567",
+            "longitude": "33.3"
         }
     ]
 }

@@ -87,6 +87,7 @@ function getNewToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function readData(auth) {
+  // writefile delay 1000sec
   const sheets = google.sheets({
     version: 'v4',
     auth
@@ -97,6 +98,7 @@ function readData(auth) {
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
+
     if (rows.length) {
       console.log('Col A,\tCol B:');
       // Print columns A and E, which correspond to indices 0 and 4.
@@ -108,8 +110,10 @@ function readData(auth) {
         var tempx = (`${row[0]}`).replace(/[^\d.-]/g, '');
         var tempy = (`${row[1]}`).replace(/[^\d.-]/g, '');
 
-        var x="";
-        var y="";
+
+
+        var x = "";
+        var y = "";
 
         // grabbing only numbers and points inside that data array in the spread sheet
         for (var i = 0; i < tempx.length; i++) {
@@ -127,14 +131,18 @@ function readData(auth) {
 
         y=parseFloat(y, 10);
 
+        var currentCoordinates = new Coordinates(x,y);
+
+        coordinatesList.push(currentCoordinates);
+
         console.log(x + "; " + y);
 
         // writting and structuring json file with data coming from google sheets
         coordinatesObject = {
           "coordinates": [
             {
-            "latitude": x,
-            "longitude": y
+            "latitude": ""+ x +"",
+            "longitude": ""+ y +""
           }
         ]
         };
@@ -148,7 +156,7 @@ function readData(auth) {
 
         //coordinatesObject = {"test"};
 
-      });
+      } );
     } else {
       console.log('No data found.');
     }
@@ -199,3 +207,7 @@ function writeData(auth) {
     console.log(JSON.stringify(response, null, 2));
   });
 }
+
+// function writeJson(jsonobject){
+//
+// }
