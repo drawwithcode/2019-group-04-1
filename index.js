@@ -24,7 +24,7 @@ fs.readFile('credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
   // Authorize a client with credentials, then call the Google Sheets API.
   authorize(JSON.parse(content), readData);
-  authorize(JSON.parse(content), writeData);
+  //authorize(JSON.parse(content), writeData);
 });
 
 /**
@@ -92,7 +92,7 @@ function readData(auth) {
     auth
   });
   sheets.spreadsheets.values.get({
-    spreadsheetId: '16YdlzfEONh1YQ-gGjZ0VGHcyyESjKJg4vRoFWrZAkII',
+    spreadsheetId: '156KcFPxVDeVz6VhMQ9dbBQQlh321PZnqvqerJh-xxBE',
     range: 'Range1',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
@@ -164,7 +164,7 @@ function writeData(auth) {
 
   var request = {
     // The spreadsheet to apply the updates to.
-    spreadsheetId: '16YdlzfEONh1YQ-gGjZ0VGHcyyESjKJg4vRoFWrZAkII', // TODO: Update placeholder value.
+    spreadsheetId: '156KcFPxVDeVz6VhMQ9dbBQQlh321PZnqvqerJh-xxBE', // TODO: Update placeholder value.
 
     range: "Foglio1!A1:A3",
 
