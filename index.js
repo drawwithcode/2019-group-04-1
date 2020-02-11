@@ -1,3 +1,19 @@
+const http = require('http');
+const port = process.env.PORT || 3000
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
+});
+
+server.listen(port,() => {
+  console.log(`Server running at port `+port);
+});
+
+
+
+
 const fs = require('fs');
 const readline = require('readline');
 const {
@@ -5,15 +21,6 @@ const {
 } = require('googleapis');
 var coordinatesObject;
 
-var express = require('express');
-var app = express();
-
-var server = app.listen(process.env.PORT || 3000,listen);
-
-app.use(express.static('public'));
-
-var io = require('socket.io')(server);
-io.socket.on('connection',newConnection);
 
 class Coordinates {
   constructor(x, y) {
