@@ -103,13 +103,15 @@ function readData(auth) {
       rows.map((row) => {
         // console.log(`${row[0]}, ${row[1]}`);
         // calling data from the sheets as variables
+        // we need to grabb only numbers and points inside that data so we use .replace
+
         var tempx = (`${row[0]}`).replace(/[^\d.-]/g, '');
         var tempy = (`${row[1]}`).replace(/[^\d.-]/g, '');
 
         var x="";
         var y="";
 
-        // grabbing only numbers and points inside that data
+        // grabbing only numbers and points inside that data array in the spread sheet
         for (var i = 0; i < tempx.length; i++) {
           if (((tempx[i] >= 0) && (tempx[i] <= 9)) || (tempx[i] == '.')) {
             x += tempx[i];
@@ -118,7 +120,7 @@ function readData(auth) {
         x=parseFloat(x, 10);
 
         for (var i = 0; i < tempy.length; i++) {
-          if (((tempy[i] >= '0') && (tempy[i] <= '9')) || (tempx[i] == '.')) {
+          if (((tempy[i] >= 0) && (tempy[i] <= 9)) || (tempy[i] == '.')) {
             y += tempy[i];
           }
         }
