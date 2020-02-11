@@ -25,7 +25,11 @@ var latCity = 50;
 var lngCity = 30;
 
 var test;
-var citytest = [];
+var cityxtest = [];
+var cityytest = [];
+
+var testx;
+var testy;
 
 var supporters = [];
 
@@ -39,7 +43,7 @@ function preload() {
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
   pot = loadSound("Files/Audio/Sound.mp3");
-  test = loadJSON("test.json");
+  test = loadJSON("/test.json");
 }
 
 const options = {
@@ -97,6 +101,19 @@ function setup() {
     fft.setInput(pot);
     pot.amp(0.1);
     pot.pause();
+
+
+    for(var i = 0; i < test.coordinates.length; i++){
+      testx = test.coordinates[i].latitude;
+
+
+        cityxtest.push(testx);
+    }
+    for(var i = 0; i < test.coordinates.length; i++){
+      testy = test.coordinates[i].longitude;
+
+        cityytest.push(testy);
+    }
 }
 
 // Callback function called when a new message comes from the server
@@ -228,27 +245,48 @@ function readstatesId(_statesName) {
     }
   }
 
-
-  for(var i = 0; i < test.coordinates.length; i++){
-    var testx = test.coordinates[i].latitude;
-    var testy = test.coordinate[i].longitude;
-
-      var myTest = new testCity(testx, testy);
-
-      citytest.push(myTest);
-  }
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+
+// function testCity(_tx, _ty,){
+//   this.x = _tx;
+//   this.y = _ty;
+//
+//   this.display = function(){
+//     clear();
+//     push();
+//     fill('#ff8676');
+//     ellipse(this.x, this.y, 4);
+//     pop();
+//   }
+// }
+
+
+
 function draw() {
   clear();
   push();
-  for (var j = 0; j < citytest.length; j++) {
-    citytest[j].display();
-  }
+
+for (var i = 0; i < cityxtest.length; i++) {
+
+
+
+    pointini = geomap.latLngToPixel(cityxtest[i], cityytest[i]);
+    push();
+    fill('#ff8676');
+    console.log(pointini.x);
+    console.log(pointini.y);
+    ellipse(pointini.x, pointini.y, 4);
+    pop();
+
+}
+
+
+
   var submit = select('#submit');
   submit.mousePressed(support);
   point = geomap.latLngToPixel(latCity, lngCity);
@@ -257,11 +295,11 @@ function draw() {
   for (let i = 0; i < supporters.length; i++) {
     fill('#ff8676');
     ellipse(point.x, point.y, 4);
-    if (pot.isPlaying() == false) {
-      pot.play();
-    } else {
-      pot.pause();
-    }
+    // if (pot.isPlaying() == false) {
+    //   pot.play();
+    // } else {
+    //   pot.pause();
+    // }
   }
   pop();
 
@@ -289,18 +327,6 @@ function draw() {
   // console.log(supporters.length);
   // console.log(supporters);
 
-  function testCity(_tx, _ty,){
-    this.x = _tx;
-    this.y = _ty;
-
-    this.display = function(){
-      clear();
-      push();
-      fill('#ff8676');
-      ellipse(this.x, this.y, 4);
-      pop();
-    }
-  }
 
   function newDrawing(data){
     clear();
