@@ -43,7 +43,7 @@ function preload() {
   cities = loadJSON("cities.json");
   coordinates = loadJSON("coordinates.json");
   pot = loadSound("Files/Audio/Sound.mp3");
-  test = loadJSON("/test.json");
+  test = loadJSON("/activecities.json");
 }
 
 const options = {
@@ -293,36 +293,36 @@ for (var i = 0; i < cityxtest.length; i++) {
   // fill('yellow');
   // ellipse(point.x, point.y, 6);
   for (let i = 0; i < supporters.length; i++) {
-    fill('#ff8676');
-    ellipse(point.x, point.y, 4);
-    // if (pot.isPlaying() == false) {
-    //   pot.play();
-    // } else {
-    //   pot.pause();
-    // }
+    fill('#e3c709');
+    ellipse(point.x, point.y, 8);
+    if (pot.isPlaying() == false) {
+      pot.play();
+    } else {
+      pot.pause();
+    }
   }
   pop();
 
-  let spectrum = fft.analyze();
-  push();
+  // let spectrum = fft.analyze();
+  // push();
   if(pot.isPlaying() == true ){
-  santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
-  //bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
-  //beirut = geomap.latLngToPixel(22.3526632,113.9876144);
-  //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
-  noStroke();
-  fill(201, 27, 43, 3);
-  for (var i = 0; i < spectrum.length; i++) {
-    let d = map(spectrum[i], 0, 0.3, 0.3, 0);
-    ellipse(santiago.x, santiago.y, d);
-    //ellipse(bogota.x, bogota.y, d);
-    //ellipse(beirut.x, beirut.y, d);
-    //ellipse(hongkong.x, hongkong.y, d);
+  // santiago = geomap.latLngToPixel(-33.4724728, -70.9100195);
+  // //bogota = geomap.latLngToPixel(4.6482837,-74.2478934);
+  // //beirut = geomap.latLngToPixel(22.3526632,113.9876144);
+  // //hongkong = geomap.latLngToPixel(33.8892133,35.4692628);
+  // noStroke();
+  // fill(201, 27, 43, 3);
+  // for (var i = 0; i < spectrum.length; i++) {
+  //   let d = map(spectrum[i], 0, 0.3, 0.3, 0);
+  //   ellipse(santiago.x, santiago.y, d);
+  //   //ellipse(bogota.x, bogota.y, d);
+  //   //ellipse(beirut.x, beirut.y, d);
+  //   //ellipse(hongkong.x, hongkong.y, d);
     }
-      console.log(santiago.x);
-      console.log(santiago.y);
-  }
-  pop();
+  //     console.log(santiago.x);
+  //     console.log(santiago.y);
+  // }
+  // pop();
 
   // console.log(supporters.length);
   // console.log(supporters);
