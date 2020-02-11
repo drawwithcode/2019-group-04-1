@@ -33,6 +33,8 @@ var testy;
 
 var supporters = [];
 
+var socket;
+
 const mappa = new Mappa("Mapbox", "pk.eyJ1IjoiZ2lvdmVudHVyYSIsImEiOiJjaWdqdnd1aW8wMDQzdnNtNDlyeDVvc283In0.T1Yqmt2Ty9DG5pgMbwE6gQ");
 
 var santiago, beirut, bogota, hongkong;
@@ -54,7 +56,7 @@ const options = {
   style: "mapbox://styles/gioventura/ck412d3am0isi1co2uwr2fhnd"
 }
 
-//var socket;
+
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -62,7 +64,7 @@ function setup() {
 
   geomap = mappa.tileMap(options);
   geomap.overlay(canvas);
-  //socket = io();
+  socket = io();
 // Define which function should be called when a new message
 // comes from the server with type "mouseBroadcast"
 //socket.on('mouseBroadcast', newDrawing);

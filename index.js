@@ -21,6 +21,14 @@ var io = require("socket.io")(server);
 //ENABLES THE APP TO ACCESS THE "PUBLIC" FOLDER
 app.use(express.static("public"));
 
+io.on('conncetion',newConnection);
+
+function newConnection(socket){
+  console.log('socket:',socket);
+}
+
+
+
 
 const fs = require('fs');
 const readline = require('readline');
